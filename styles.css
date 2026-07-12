@@ -300,3 +300,31 @@ mjx-container[display="true"] {
   overflow-y: hidden;
   max-width: 100%;
 }
+
+/* Mermaid diagram palette. Quarto derives Mermaid colours from the Bootstrap
+   theme, which here produced low-contrast red text on dark-grey subgraph
+   fills. Re-map to the site's navy/blue-on-light palette. Node colours are
+   driven by Quarto's CSS variables; the subgraph (cluster) fill is hard-coded
+   inside the SVG's own <style>, so it needs a scoped `!important` override. */
+.cell-output-display,
+div.quarto-figure {
+  --mermaid-node-bg-color: #f5f8fc;   /* node fill */
+  --mermaid-node-fg-color: #1e6091;   /* node border */
+  --mermaid-label-fg-color: #0b1e3a;  /* node text */
+  --mermaid-edge-color: #123a63;      /* arrows */
+  --mermaid-fg-color: #0b1e3a;
+  --mermaid-label-bg-color: #ffffff;  /* edge-label background */
+}
+
+svg.flowchart .cluster rect {
+  fill: #eef3fa !important;
+  stroke: #c3d3e8 !important;
+}
+
+svg.flowchart .cluster .nodeLabel,
+svg.flowchart .cluster-label,
+svg.flowchart .cluster span,
+svg.flowchart .cluster text {
+  fill: #0b1e3a !important;
+  color: #0b1e3a !important;
+}
