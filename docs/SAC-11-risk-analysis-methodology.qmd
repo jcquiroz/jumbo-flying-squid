@@ -1,5 +1,5 @@
 ---
-title: "Risk Analysis for Tropical Tuna Management"
+title: "Risk Analysis"
 subtitle: "SAC-11 INF-F & SAC-11-08 (IATTC) — Extended Methodological Summary"
 author: "Juan-Carlos Quiroz"
 date: "2026-07-12"
