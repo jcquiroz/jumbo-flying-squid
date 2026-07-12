@@ -193,6 +193,34 @@ Punt, André E., Doug S. Butterworth, Carryn L. de Moor, José A. A. De Oliveira
 Roa-Ureta, Rubén H., and Rodrigo Wiff. 2025. <em>Stock Assessment of the Jumbo Squid (<span class="nocase">Dosidicus gigas</span>) in the Eastern Pacific with Multi-Annual Multi-Fleet Generalized Depletion Models Combined with Environmental Surplus Production Models (1990–2024)</em>. Scientific Committee Document Nos. SC13-Obs03. South Pacific Regional Fisheries Management Organisation (<span>SPRFMO</span>).
 </div>
 </div></section></div></main> <!-- /main -->
+<script>
+// Mermaid paints subgraph (cluster) titles *below* the connector edges, so the
+// arrows strike through the title text. Move each cluster title to the end of
+// the diagram's root group so it repaints above the edges; combined with the
+// panel-coloured background in styles.css, arrows then read as passing behind
+// the title. Cluster-label transforms are absolute (ancestors carry no
+// transform), so re-parenting to g.root preserves position.
+(function () {
+  function maskClusterTitles() {
+    document.querySelectorAll("svg.flowchart g.root").forEach(function (root) {
+      // Once moved out of g.clusters the labels no longer match this selector,
+      // so the operation is idempotent and cannot loop with the observer below.
+      root.querySelectorAll("g.clusters .cluster-label").forEach(function (label) {
+        root.appendChild(label);
+      });
+    });
+  }
+
+  if (document.readyState !== "loading") maskClusterTitles();
+  document.addEventListener("DOMContentLoaded", maskClusterTitles);
+  window.addEventListener("load", maskClusterTitles);
+
+  // Mermaid renders asynchronously; watch until the diagram appears, then stop.
+  var observer = new MutationObserver(maskClusterTitles);
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+  setTimeout(function () { observer.disconnect(); }, 8000);
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
