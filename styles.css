@@ -328,3 +328,13 @@ svg.flowchart .cluster text {
   fill: #0b1e3a !important;
   color: #0b1e3a !important;
 }
+
+/* Give subgraph titles an opaque panel-coloured background so the connector
+   arrows (which Mermaid paints above the cluster labels) read as passing
+   *behind* the title instead of striking through the text. Paired with the
+   include-after-body script that repaints the titles above the edge layer. */
+svg.flowchart .cluster-label .nodeLabel,
+svg.flowchart .cluster-label foreignObject div,
+svg.flowchart .cluster-label p {
+  background: #eef3fa !important;
+}
