@@ -1,0 +1,302 @@
+/* css styles */
+
+/* Fonts: Metrophobic (body) + Jura (headings) */
+@import url('https://fonts.googleapis.com/css2?family=Metrophobic&family=Jura:wght@300;400;500;600;700&display=swap');
+
+/* Shared content width (matches .hero-content) */
+:root {
+  --content-width: 950px;
+}
+
+/* Constrain the rendered document to the hero-content width.
+   Use `width: min(...)` rather than `max-width` so the box sizes against the
+   available column (not its content): with `margin-inline: auto` a bare
+   `max-width` makes this a shrink-to-fit box, and a wide non-wrapping child
+   (e.g. a nowrap MathJax display equation) would inflate it past the grid
+   column and overlap the right-hand TOC. `min(…, 100%)` yields the full
+   950px on TOC-less pages and shrinks to the column when a TOC is present. */
+#quarto-document-content {
+  width: min(var(--content-width), 100%);
+  margin-inline: auto;
+  padding-inline: 1rem;
+  box-sizing: border-box;
+}
+
+/* Keep the navbar pinned to the top while scrolling.
+   Quarto's header is already `fixed-top` but uses headroom.js to hide it on
+   scroll-down; neutralise that transform so it stays visible. */
+#quarto-header.headroom {
+  transform: translateY(0) !important;
+}
+.headroom--unpinned {
+  transform: translateY(0) !important;
+}
+
+/* Offset the sticky TOC sidebar so it sits a little below the fixed navbar
+   instead of scrolling up underneath it. */
+#quarto-margin-sidebar,
+.sidebar.margin-sidebar {
+  top: 5rem !important;
+  max-height: calc(100vh - 5rem) !important;
+}
+
+/* Hide empty Quarto title block */
+#title-block-header:empty {
+  display: none;
+}
+
+/* Document title — make it clearly outrank the content headings (h2/h3…) */
+#title-block-header .title {
+  font-family: "Jura", sans-serif;
+  font-size: clamp(2.3rem, 5vw, 2.85rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  color: #0b1e3a;
+}
+
+#title-block-header .subtitle {
+  font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+/* Hero section — fills the content-width box */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+  margin-inline: -1rem;
+  margin-bottom: 2rem;
+  padding: 4rem 1.5rem;
+  text-align: center;
+  background:
+    linear-gradient(135deg, rgba(11, 30, 58, 0.75) 0%, rgba(18, 58, 99, 0.6) 55%, rgba(30, 96, 145, 0.55) 100%),
+    url("images/logo_calamasur_pota.svg") center / cover no-repeat;
+  color: #fff;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: var(--content-width);
+}
+
+.hero-content h1,
+.hero-title {
+  font-weight: 700;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.hero-content p {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-weight: 300;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+.hero-btn,
+.hero-btn-outline {
+  display: inline-block;
+  margin: 0.4rem;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.hero-btn {
+  background: #fff;
+  color: #0b1e3a;
+}
+
+.hero-btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+.hero-btn:hover,
+.hero-btn-outline:hover {
+  transform: translateY(-2px);
+}
+
+.hero-btn:hover {
+  color: #acb5c2;
+}
+
+.hero-btn-outline:hover {
+  background: rgba(237, 235, 235, 0.15);
+  color: #fff;
+}
+
+/* Article meta (author / affiliation / date) */
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+  padding: 1rem 0 1.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+}
+
+.article-meta .meta-item {
+  margin: 0;
+}
+
+.article-meta .meta-item p {
+  margin: 0;
+}
+
+.article-meta .meta-label {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #1e6091;
+  margin-bottom: 0.2rem;
+}
+
+/* References section */
+#quarto-bibliography .csl-entry {
+  font-size: 0.85rem;
+}
+
+
+/* Maquillajes */
+.highlight {
+  background-color: #cfddf3;
+  border-radius: 0.2rem;
+}
+
+/* Metrophobic ships only a 400 weight, so bold text has no true bold face.
+   Reinforce <strong>/<b> with weight + color so it reads clearly. */
+strong, b {
+  font-weight: 900;
+  color: #a54545;
+}
+
+/* Page footer — align with content width and match the site theme */
+.footer,
+.nav-footer {
+  background: #fffcfb;
+  color: rgba(121, 75, 11, 0.85);
+}
+
+.nav-footer {
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding: 1.25rem 1rem;
+  gap: 1rem;
+  font-size: 0.9rem;
+  align-items: center;
+}
+
+.nav-footer p {
+  margin: 0;
+}
+
+.footer a,
+.nav-footer a {
+  color: #ca7878;
+  text-decoration: none;
+}
+
+.footer a:hover,
+.nav-footer a:hover {
+  color: #ca7878;
+  text-decoration: underline;
+}
+
+.nav-footer-center {
+  font-weight: 600;
+  color: #ca7878;
+}
+
+@media (max-width: 600px) {
+  .nav-footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+}
+
+/* Model cards */
+.model-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.model-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.25rem;
+  border: 1px solid #d6e0ee;
+  border-radius: 0.75rem;
+  background: #f5f8fc;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.model-card:hover {
+  transform: translateY(-3px);
+  border-color: #123a63;
+  box-shadow: 0 6px 18px rgba(11, 30, 58, 0.15);
+}
+
+.model-card-tag {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #1e6091;
+}
+
+.model-card-title {
+  font-family: "Jura", sans-serif;
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: #0b1e3a;
+}
+
+.model-card-desc {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  opacity: 0.85;
+}
+
+@media (max-width: 700px) {
+  .model-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Keep wide figures/diagrams (e.g. Mermaid SVGs) inside the content column
+   so they don't spill over the right-hand TOC. */
+.cell-output-display svg,
+div.quarto-figure svg,
+pre.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Let overly wide display math scroll horizontally instead of overlapping
+   the TOC (display math never line-wraps). */
+.math.display,
+mjx-container[display="true"] {
+  display: block;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
