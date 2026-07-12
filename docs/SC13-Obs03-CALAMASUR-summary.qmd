@@ -1,0 +1,88 @@
+---
+title: "Stock Assessment of Jumbo Flying Squid"
+subtitle: "SC13-Obs03 (CALAMASUR)"
+author: "Juan-Carlos Quiroz"
+date: "2026-07-12"
+categories: ["Working paper summary"]
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+  pdf:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    include-in-header:
+      text: |
+        \usepackage{titling}
+        \pretitle{%
+          \begin{center}
+          \includegraphics[width=0.32\textwidth]{../images/logo_calamasur_pota.png}\\[1.5em]
+          \LARGE
+        }
+        \posttitle{\par\end{center}}
+        \postdate{\par\vspace{0.8em}\normalsize\textbf{Category:} Working paper summary\end{center}}
+---
+
+## Document
+
+A technical paper by CALAMASUR [@roaureta2025calamasur], presented as an observer paper (SC13-Obs03) to the 13th Meeting of the
+SPRFMO Scientific Committee (8–13 September 2025, Wellington, New Zealand). Dated
+August 7, 2025.
+
+## Subject
+
+A region-wide stock assessment of jumbo squid (*Dosidicus gigas*) across the
+South East Pacific (SEP) — the world's largest invertebrate fishery (over
+1 million tonnes in recent years, 15th largest of all fisheries). It is fished in
+Ecuadorian, Peruvian, and Chilean EEZs plus international high seas (currently all
+Chinese vessels; Chinese Taipei operated until 2020, South Korea until 2019).
+
+## Methods
+
+A two-stage, environment-driven approach spanning 1990–2024:
+
+- **Stage 1** fits multi-annual, multi-fleet *generalized depletion models* to a
+  monthly database (Jan 2012–Dec 2024) of total catch, fishing effort, and mean
+  weight, for three fleets: Peruvian, Chilean, and Asian. The database covers
+  >99% of regional landings.
+- **Stage 2** uses a *Pella-Tomlinson surplus production model* driven by El
+  Niño/La Niña cycles (NOAA's Oceanic Niño Index, 10 transitions 1990–2024),
+  testing 16 hypotheses about how carrying capacity, production symmetry, and
+  intrinsic growth rate change with the environment.
+
+## Key results
+
+- Depletion models fit Chilean and Asian data well, Peruvian data less so (fits
+  ~90% of points).
+- Natural mortality estimated at 0.17/month (≈2.0/year), consistent with the
+  species' short life cycle.
+- Biomass fluctuates widely (maxima an order of magnitude above minima) but shows
+  **no sustained downward trend**; highest peaks were before 2019.
+- Exploitation rates have risen since 2020 but remain **mostly below 40%** (peaked
+  ~40% in 2018, now ~20–30%).
+- The best-supported hypothesis is that only the intrinsic growth rate *r* varies
+  with the environment — higher during El Niño (2.93/yr) than La Niña (0.48/yr).
+
+## Main conclusion
+
+The [stock is **not overfished**, though it **may be undergoing overfishing**]{.highlight}.
+Because the stock has entered a regime of strong environment-driven fluctuations,
+MSY and B~MSY~ are judged inadequate reference points, and a standard Kobe plot
+cannot be built. During El Niño years the model even shows negative surplus
+production. Estimates of sustainable harvest rates (mean latent productivity)
+remain statistically imprecise.
+
+## Way forward
+
+Develop models with 4 fleets and 3 natural-mortality zones (Peru, Chile, high
+seas), and move the surplus-production model to a continuous, monthly ONI-driven
+time step. Better environmental reference points are needed to properly judge
+exploitation status.
+
+## References {.unnumbered}
+
+::: {#refs}
+:::
+

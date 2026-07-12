@@ -1,0 +1,47 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+    - models.qmd
+    - about.qmd
+    - docs/SC13-Obs03-CALAMASUR-summary.qmd
+    - docs/SC13-SQ06-CHL-SPiCT-summary.qmd
+    - docs/SC13-SQ07-CHN-state-space-summary.qmd
+    - docs/SAC-11-risk-analysis-methodology.qmd
+    - "!notes.qmd"
+
+website:
+  title: "Jumbo Flying Squid"
+  navbar:
+    right:
+      - href: index.qmd
+        text: Home+
+      - href: models.qmd
+        text: Models+
+      - href: docs/SAC-11-risk-analysis-methodology.qmd
+        text: Risk+
+      - href: about.qmd
+        text: About+
+
+  page-footer:
+    border: true
+    left: |
+      Un proyecto financiado por [CALAMASUR](https://www.calamasur.com){target="_blank"}
+    center: Juan-Carlos Quiroz
+    right: |
+      Apoyado por [Facile Visual](https://www.facilevisual.com){target="_blank"}
+
+
+format:
+  html:
+    theme:
+      - simplex
+      - theme.scss
+    css: styles.css
+    toc: true
+
+editor: source
+
+bibliography: references.bib
+

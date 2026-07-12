@@ -1,0 +1,447 @@
+---
+title: "Risk Analysis for Tropical Tuna Management"
+subtitle: "SAC-11 INF-F & SAC-11-08 (IATTC) — Extended Methodological Summary"
+author: "Juan-Carlos Quiroz"
+date: "2026-07-12"
+categories: ["Working paper summary"]
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+  pdf:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    include-in-header:
+      text: |
+        \usepackage{titling}
+        \pretitle{%
+          \begin{center}
+          \includegraphics[width=0.32\textwidth]{../images/logo_calamasur_pota.png}\\[1.5em]
+          \LARGE
+        }
+        \posttitle{\par\end{center}}
+        \postdate{\par\vspace{0.8em}\normalsize\textbf{Category:} Working paper summary\end{center}}
+---
+
+## Documents
+
+Two complementary working papers submitted to the 11th Meeting of the IATTC
+Scientific Advisory Committee (2020):
+
+- **SAC-11 INF-F** [@maunder2020riskframework] — the *methods* paper:
+  *Implementing reference point-based fishery harvest control rules within a
+  probabilistic framework that considers multiple hypotheses.*
+- **SAC-11-08** [@airesdasilva2020riskanalysis] — the *application* paper:
+  *Risk analysis for management of the tropical tuna fishery in the Eastern
+  Pacific Ocean, 2020.*
+
+## How the two papers relate
+
+The two documents are complementary halves of a single body of work.
+**SAC-11 INF-F** [@maunder2020riskframework] sets out the *general methodology*:
+how to implement a reference-point-based harvest control rule (HCR) inside a
+probabilistic framework that carries multiple competing stock-assessment models
+rather than a single "best" model, using eastern Pacific Ocean (EPO) bigeye tuna
+as a worked case study. **SAC-11-08** [@airesdasilva2020riskanalysis] *applies*
+that methodology to both EPO bigeye and yellowfin tuna and reports the resulting
+stock-status and management-decision probabilities.
+
+Both papers explicitly frame the approach as a **pragmatic compromise between
+computational demand, complexity, and statistical rigour**. They weight models
+using information contained in the *data*, the *population processes*, and the
+*fishery processes*, supplemented by *expert judgement*, and both openly
+acknowledge that the complexity of contemporary integrated stock-assessment
+models prevents strict adherence to ideal statistical criteria (e.g.
+likelihood- or AIC-based model selection, full Bayesian MCMC). The weighting
+scheme is therefore deliberately semi-quantitative and partly subjective by
+design.
+
+The motivation was concrete: by 2018–2019 the IATTC staff had concluded that its
+"best assessment" (single base-case) results for bigeye and then yellowfin were
+**too sensitive to new data** — particularly recent longline abundance-index
+observations — to support management advice. Rather than pick one model, the
+staff moved to a **risk analysis** that carries a suite of plausible alternative
+models ("states of nature"), weights them by plausibility, and produces
+probability statements about whether the HCR's target and limit reference points
+have been exceeded.
+
+## Conceptual foundation common to both papers
+
+**The management problem.** The IATTC HCR for tropical tunas (Resolution
+C-16-02) is written in probabilistic terms: if the probability that fishing
+mortality $F$ exceeds the limit reference point $F_{LIMIT}$ is greater than 10%,
+management measures must be established that give at least a 50% probability of
+reducing $F$ to the target $F_{MSY}$ or below, and less than a 10% probability
+that $F$ exceeds $F_{LIMIT}$. Analogous conditions apply to spawning biomass $S$
+relative to $S_{MSY}$ and $S_{LIMIT}$. Evaluating such a rule *requires* an
+explicit quantification of uncertainty — a point estimate alone cannot answer
+it.
+
+**Definition of risk.** Following FAO (1995) [@FAO1995], risk is defined as
+"the probability of something undesirable happening" — here, the probability of
+exceeding the target or limit reference points.
+
+**Two categories of uncertainty addressed.** Both papers concentrate on
+(1) **parameter uncertainty** — the estimation precision of quantities within a
+given model — and (2) **model-structure uncertainty** — the possibility that
+different model structures each give a reasonable representation of reality. A
+third category, **uncertainty about the future** (process variation), is
+explicitly deferred to later development and to Management Strategy Evaluation
+(MSE).
+
+**Quantities of interest are ratios.** Because status is judged relative to
+reference points, the probability distributions are computed for the *ratios*
+(e.g. $F_{cur}/F_{MSY}$, $S_{cur}/S_{MSY}$), not for the individual components.
+
+**Idealized vs. practical approach.** SAC-11 INF-F first describes an *idealized*
+fully-Bayesian solution — integrate all data and data-based priors into models,
+parameterize structural uncertainty, run MCMC, and obtain posterior
+distributions for the quantities of interest — and then explains why it is not
+currently feasible for tropical tunas: AIC and likelihood-based selection behave
+poorly for complex, highly parameterized models whose assumptions are routinely
+violated [@burnham2002model]; not all structural hypotheses can be reduced to a
+set of estimable parameters; data are often insufficient to estimate the
+relevant parameters; and MCMC over many models is prohibitively slow. The
+**practical approach** is the paper's answer to these obstacles.
+
+## The methodology in SAC-11 INF-F (the "practical approach")
+
+The practical approach has **five main steps**: (1) establish a hierarchy of
+hypotheses and models; (2) define a weighting system for hypotheses and models;
+(3) calculate probability distributions of the quantities of interest for each
+model; (4) combine those distributions across models; and (5) present the
+results as a risk analysis.
+
+### Step 1 — A three-level hierarchy of hypotheses
+
+Hypotheses about the state of nature are represented by stock-assessment models,
+arranged in a **flow chart / hierarchical tree** with three levels. The
+hierarchy exists to prevent any single hypothesis — or an "overarching"
+hypothesis represented by many models — from inadvertently dominating the result,
+and to make model development and weight assignment orderly.
+
+- **Level 1 — Overarching hypotheses.** Broad states of nature (e.g. for bigeye:
+  *the recruitment regime shift is real* vs. *the regime shift is an artefact of
+  model misspecification*). These are hard or inappropriate to distinguish by fit
+  to data, so they are weighted **by expert opinion only**, and all lower-level
+  weights are conditional on them.
+- **Level 2 — Hypotheses.** Specific hypotheses that *can* be represented by a
+  model and differentiated by fitting to data. Level 2 is divided into sub-levels
+  (A, B, …), each addressing a distinct assessment issue (for bigeye, 2A = the
+  recruitment regime shift; 2B = misfit to length-composition data for the
+  fishery with asymptotic selectivity). Models often must be combined across
+  sub-levels to resolve all issues at once.
+- **Level 3 — Sub-hypotheses.** Evaluated differently from Level 2, to avoid the
+  influence of data or to reduce the number of analyses. The canonical case is
+  **steepness ($h$)** of the Beverton–Holt stock–recruitment relationship:
+  because steepness is notoriously biased when estimated inside assessment
+  models, it is fixed at a discrete set of values ($h$ = 0.7, 0.8, 0.9, 1.0) and
+  weighted only by expert opinion and convergence, so the data are not allowed to
+  inform it.
+
+### Step 2 — The weighting system
+
+Weights convert the hierarchy into usable probabilities. The system has four
+parts: (a) discrete weight categories; (b) a set of weight metrics;
+(c) assignment and rescaling of weights; and (d) reduction of the number of
+models.
+
+**(a) Discrete weight categories.** To tame subjectivity, weights are drawn from
+four discrete categories rather than a continuous scale — **None = 0,
+Low = 0.25, Medium = 0.5, High = 1.0** — while acknowledging that the numerical
+values themselves are subjective choices.
+
+**(b) Weight metrics.** Each model's overall weight is the **product** of several
+component metrics (Equation 1):
+
+$$W(\text{model}) = W(\text{Expert}) \times W(\text{Convergence}) \times W(\text{Fit}) \times W(\text{Plausible parameters}) \times W(\text{Plausible results}) \times W(\text{Diagnostics})$$
+
+- **W(Expert)** — subjective expert judgement assigned *a priori*, drawing on
+  experience with this and related assessments and on population-dynamics theory.
+- **W(Convergence)** — whether the estimation converged; a non-positive-definite
+  Hessian is treated as non-convergence and given **zero weight**, which
+  eliminates the model.
+- **W(Fit)** — overall fit to data, based on **AIC** but with deliberately
+  *liberal* criteria so that all models are retained rather than eliminated; the
+  best-fitting (lowest-AIC) model gets *High* and the worst gets *Low*, with a
+  linear scale between. Special rules handle models that use different data, time
+  frames, or data-weighting so AIC is not compared unfairly (e.g. computing AIC
+  only over data common to all models).
+- **W(Plausible parameters)** — realism of the estimated additional parameters
+  (e.g. an implausible growth or $M$ value flags misspecification being absorbed
+  by that parameter).
+- **W(Plausible results)** — realism of derived results (e.g. an unrealistically
+  high or low estimated fishing mortality). Flagged as highly subjective; care is
+  needed that it not control the outcome.
+- **W(Diagnostics)** — model reliability from a suite of diagnostics. Uniquely,
+  this component is a **sum** of sub-weights (Equation 2) so that no single
+  diagnostic is over-weighted:
+
+$$W(\text{Diagnostics}) = W(\text{ASPM}, R_0, \text{Catch curve}) + W(\text{Retrospective}) + W(\text{Composition residuals}) + W(\text{Index residuals}) + W(\text{Recruitment residuals})$$
+
+The diagnostic sub-components probe specific failure modes: the **$R_0$
+likelihood profile** and **ASPM / ASPM-Rdev** and **catch-curve** diagnostics
+test whether abundance information comes from the indices (preferred) or is being
+driven by composition data or misspecification; **retrospective analysis** tests
+whether estimates drift systematically as data years are added; and residual
+diagnostics for composition, index and recruitment test violations of likelihood
+assumptions.
+
+**(c) Assignment and rescaling.** Weights are assigned following the hierarchy
+and then **rescaled to sum to one** so they behave as probabilities. Crucially,
+rescaling is done **conditionally along the branches of the tree** — Level 1
+across all overarching hypotheses, Level 2 within each sub-level branch, Level 3
+within each Level-2 branch — turning the flow chart into a **probability tree**.
+This prevents an overarching hypothesis from gaining weight merely because more
+models happen to represent it. Branch-specific metrics (e.g. W(Expert)) are
+assigned within a branch; metrics with a common interpretation across the tree
+(e.g. W(Plausible results)) are assigned globally. Where consensus among experts
+is absent, each expert's weights are rescaled and then averaged so each expert
+has comparable influence.
+
+**(d) Reducing the number of models.** Because diagnostics like the $R_0$ profile
+and retrospective analysis require multiple model runs, the number of models must
+be kept practical. Any metric scored *None* (zero) zeroes the product and
+eliminates the model. Defining a simpler **"Base" model** for each Level-2A
+branch lets whole groups of dependent models be eliminated without running them
+all — if a Base model fails (e.g. non-convergence), its derived Level-2B/Level-3
+models are dropped too. Checking W(Expert) and W(Convergence) *first* saves
+computing the remaining metrics for models that will be eliminated anyway.
+
+### Step 3 — Probability distribution of the quantities of interest, per model
+
+A fully Bayesian per-model posterior would be preferred but is impractical at
+scale, so **two approximations** are used: (i) frequentist approximations of the
+posterior for the quantity given the model (justified because with informative
+data good frequentist coverage approximates a Bayesian posterior), and
+(ii) **normal approximations** based on the estimated standard error of the
+(often derived) quantity, since a profile likelihood on a derived ratio may not
+be obtainable. The per-model distribution is then rescaled to a proper density
+$P(\text{Quantity} \mid \text{Model} = m)$.
+
+### Step 4 — Combining distributions across models (model averaging)
+
+The distributions are combined by **model averaging** [@hoeting1999bma] weighted
+by the rescaled model probabilities (Equation 6):
+
+$$P(\text{Quantity}) = \sum_{m \in \text{Models}} P(\text{Quantity} \mid \text{Model} = m)\, P(\text{Model} = m)$$
+
+evaluated over a grid of the quantity fine and wide enough to resolve the tails
+(which matter because the HCR turns on tail probabilities such as
+$P(F > F_{LIMIT}) > 0.1$). The **cumulative distribution function** is then formed
+by trapezoidal integration (Equation 7) and used to read off the probability of
+exceeding a reference point; where the normal approximation is used, the normal
+CDF is used directly.
+
+### Step 5 — Presenting the risk analysis
+
+Results are presented as: probability density plots of the ratios (optionally
+decomposed by weighting component to show each factor's influence); CDFs for
+reading exceedance probabilities; **Kobe (phase) plots** placing each model and
+the combined result relative to reference points; and **decision tables** (in the
+Punt & Hilborn 1997 format) giving the performance measure — the exceedance
+probability — for each management action under each state of nature, with a
+weighted-average column. **Sensitivity analysis to the weights** is recommended
+to show how robust the advice is to the (subjective) weighting.
+
+### The bigeye case study and its lessons
+
+Applying this to EPO bigeye, the hierarchy was built around two issues: the
+mid-1990s **recruitment regime shift** (Level 1: real vs. artefact) and **misfit
+to longline length-composition data** under assumed asymptotic selectivity. Two
+application-specific metrics were added — **W(Fix regime)** (a model's ability to
+remove the regime shift, measured by the ratio of late- to early-period median
+recruitment) and **W(Empirical selectivity)** (agreement between model-implied
+and "empirical" selectivity). Several base models were eliminated (e.g. the
+Ricker model for non-convergence). The discussion documents the framework's
+honest limitations: pervasive **subjectivity** in hypothesis choice and
+weighting; the tension of using standard statistical machinery for *parameter*
+uncertainty while deliberately setting it aside for *model-structure*
+uncertainty; poorly estimated **tails** under the normal approximation (MCMC
+comparisons showed fatter, sometimes asymmetric real tails); and, most
+consequentially, **bimodality** in the combined distributions — the bigeye
+result sits between an optimistic and a pessimistic cluster of models that
+available data cannot distinguish.
+
+## The methodology in SAC-11-08 (the application)
+
+SAC-11-08 [@airesdasilva2020riskanalysis] condenses the INF-F methodology into a
+**four-step "pragmatic risk analysis"** and applies it to both bigeye and
+yellowfin:
+
+1. **Identify alternative hypotheses ("states of nature")** about population
+   dynamics that address the main assessment issues, arranged in a flow chart
+   showing dependencies (details for yellowfin in SAC-11 INF-J; for bigeye in
+   SAC-11 INF-F).
+2. **Translate hypotheses into stock-assessment models** — 12 model
+   configurations for yellowfin and 14 for bigeye, each run at four steepness
+   values ($h$).
+3. **Determine the relative weight of each model** as a relative probability,
+   using the mix of metrics from INF-F (expert opinion, model fit, plausibility
+   of parameters and results, diagnostics, convergence), then rescale to relative
+   probabilities — explicitly to avoid the bias of equal weighting.
+4. **Combine model relative probabilities with the per-model probability
+   distributions** of the quantities of interest to compute the probability that
+   the C-16-02 target and limit reference points are exceeded.
+
+The analysis is run **separately for each species** and split into two
+components: **current stock status** (weighted-average ratios and exceedance
+probabilities via combined CDFs) and **decision analysis** (the consequences of
+six alternative purse-seine closure durations — 0, 36, 70, 72, 88, 100 days — on
+the $F$-based reference points, with $F$ assumed proportional to open fishing
+days adjusted for the October "corralito" spatial closure and fleet-capacity
+changes). No projections were run, so the spawning-biomass reference points could
+not be evaluated in the decision analysis — a deferred development.
+
+### Headline results
+
+- **Yellowfin** — 48 models, all retained. The combined distributions are
+  **unimodal**. $P(F_{cur} > F_{MSY}) \approx 9\%$,
+  $P(S_{cur} < S_{MSY}) \approx 12\%$, and $P$ of breaching either **limit**
+  reference point $\approx 0\%$. The stock is unambiguously healthy; the current
+  72-day closure carries only a 9% risk of exceeding $F_{MSY}$.
+- **Bigeye** — 44 of 48 models retained (4 failed to converge). The combined
+  distributions are **bimodal**: $P(F_{cur} > F_{MSY}) \approx 50\%$,
+  $P(S_{cur} < S_{MSY}) \approx 53\%$, with non-negligible limit-exceedance
+  probabilities ($\approx 5\%$ for $F$, $\approx 6\%$ for $S$). The optimal
+  management direction cannot be determined from the analysis alone. However, the
+  combined *pessimistic* models give only a ~10% probability of exceeding
+  $F_{LIMIT}$ at the current 72-day closure, so a **status-quo harvest strategy is
+  judged appropriate in the short term**.
+
+The paper cautions that, for the bigeye bimodal case, simple summaries such as
+the expected value or a single $P(F_{cur} > F_{MSY})$ statement should be
+**avoided** in favour of the whole distribution, and neither the average nor a
+single assumed state of nature should drive the closure decision without weighing
+the risk of that assumption being wrong. It recommends continued improvement of
+the assessments (growth estimation — which carried ~58% of the model weight —
+model time-span, stock structure, natural mortality, selectivity) and development
+of **MSE** [@punt2016mse], for which the weighted model set can seed the
+operating models.
+
+## Key-points workflow (the procedure at a glance)
+
+The following captures the end-to-end workflow common to both papers, from
+problem framing to management advice.
+
+```{mermaid}
+%%| label: fig-workflow
+%%| fig-cap: "Pragmatic risk-analysis workflow: seventeen steps grouped into six phases (A–F)."
+flowchart TD
+  subgraph A["A · Frame the problem"]
+    S1["1 · Frame the HCR question probabilistically"] --> S2["2 · Reject the single 'best assessment'"]
+  end
+  subgraph B["B · Define hypotheses & models"]
+    S3["3 · Enumerate the states of nature"] --> S4["4 · Build the three-level hypothesis hierarchy"] --> S5["5 · Translate hypotheses into models"]
+  end
+  subgraph C["C · Weight the models"]
+    S6["6 · Set discrete weight categories (0 / .25 / .5 / 1)"] --> S7["7 · Score the six weight metrics"] --> S8["8 · Eliminate implausible models efficiently"] --> S9["9 · Compute each model's product weight"] --> S10["10 · Rescale conditionally along the tree"]
+  end
+  subgraph D["D · Build & combine probabilities"]
+    S11["11 · Per-model distribution of the ratio"] --> S12["12 · Model-average across models"] --> S13["13 · Form CDFs; read exceedance probability"]
+  end
+  subgraph E["E · Decide & present"]
+    S14["14 · Run the closure decision analysis"] --> S15["15 · Present densities, Kobe plots, tables"] --> S16["16 · Interpret with uncertainty explicit"]
+  end
+  subgraph F["F · Feed forward"]
+    S17["17 · Improve assessments; seed MSE operating models"]
+  end
+  S2 --> S3
+  S5 --> S6
+  S10 --> S11
+  S13 --> S14
+  S16 --> S17
+```
+
+1. **Frame the management question probabilistically.** Start from the HCR
+   (C-16-02), which is written as probability statements about $F$ and $S$
+   relative to target ($F_{MSY}$, $S_{MSY}$) and limit ($F_{LIMIT}$, $S_{LIMIT}$)
+   reference points; the analysis must deliver those probabilities.
+2. **Reject the single "best assessment."** Because point estimates cannot
+   express the uncertainty the HCR needs — and because the base-case results were
+   over-sensitive to new data — adopt a multi-model risk analysis instead.
+3. **Enumerate the states of nature.** Identify the main unresolved assessment
+   issues (bigeye: recruitment regime shift, composition misfit; yellowfin: index
+   inconsistencies, size increases, composition misfit, possible spatial
+   structure) and cast them as competing hypotheses.
+4. **Build the three-level hypothesis hierarchy.** Level 1 overarching hypotheses
+   (expert-weighted only) → Level 2 data-distinguishable hypotheses in
+   issue-specific sub-levels → Level 3 sub-hypotheses (e.g. fixed steepness
+   values). Draw it as a flow chart / probability tree.
+5. **Translate hypotheses into models.** Configure a stock-assessment model for
+   each hypothesis (12 configs × 4 $h$ for yellowfin; 14 configs × 4 $h$ for
+   bigeye), combining sub-level models where an issue needs more than one change.
+6. **Set up the weighting system.** Use discrete weight categories (None 0 /
+   Low 0.25 / Medium 0.5 / High 1.0) to limit subjectivity.
+7. **Score each weight metric.** Assign W(Expert), W(Convergence), W(Fit)
+   (liberal AIC-based), W(Plausible parameters), W(Plausible results), and
+   W(Diagnostics) (itself the *sum* of $R_0$/ASPM/catch-curve, retrospective, and
+   residual sub-weights). Add application-specific metrics as needed (bigeye:
+   W(Fix regime), W(Empirical selectivity)).
+8. **Eliminate implausible models efficiently.** Any *None* score zeroes the
+   product; check Expert and Convergence first; use "Base" models so failure of a
+   base eliminates its dependent branch without running every model.
+9. **Compute each model's overall weight.** Take the product of the (summed, for
+   diagnostics) component weights — Equation 1.
+10. **Rescale weights conditionally along the tree.** Rescale to sum to one within
+    each branch and level so the flow chart becomes a probability tree; this stops
+    any hypothesis from being over-weighted simply for being represented by more
+    models.
+11. **Build each model's probability distribution for the quantity of interest.**
+    Work with ratios (e.g. $F_{cur}/F_{MSY}$); approximate the per-model posterior
+    with frequentist / normal approximations based on the estimated standard
+    error, then rescale to a density.
+12. **Model-average across models.** Combine per-model densities weighted by
+    rescaled model probabilities — Equation 6 — over a grid fine and wide enough
+    to capture the tails.
+13. **Form CDFs and read exceedance probabilities.** Integrate (trapezoidal rule,
+    Equation 7) to get $P(\text{exceed reference point})$ currently and under each
+    management action.
+14. **Run the decision analysis.** Evaluate alternative purse-seine closure
+    durations (0/36/70/72/88/100 days), translating closure days into $F$
+    (proportional to open days, adjusted for the corralito and fleet capacity),
+    and tabulate exceedance probabilities per model and combined.
+15. **Present the results.** Density plots (optionally decomposed by weighting
+    factor), CDFs, Kobe phase plots (with the combined point defined by
+    $P = 0.5$), and Punt–Hilborn decision tables; run **sensitivity analysis on
+    the weights**.
+16. **Interpret with the uncertainty made explicit.** Report probability
+    statements, not point estimates; where the combined distribution is bimodal
+    (bigeye), present the whole distribution and the optimistic/pessimistic states
+    rather than a misleading average.
+17. **Feed forward to improvement and MSE.** Use the hypotheses that drive
+    bimodality and those carrying high weight to prioritise assessment research
+    (growth, time-span, $M$, selectivity, stock structure), and reuse the
+    weighted model set as operating models for Management Strategy Evaluation.
+
+## Points of emphasis and acknowledged limitations
+
+- **A pragmatic, not idealized, method.** Both papers position the approach
+  explicitly as a compromise among computational demand, complexity, and
+  statistical rigour — a deliberate step back from full Bayesian/MCMC and from
+  likelihood- or AIC-only model selection, which behave poorly for complex,
+  highly parameterized, assumption-violating assessment models.
+- **Model fit plays only a limited role.** Fit (AIC) is *one* metric among many
+  and is applied with liberal criteria; reliability, plausibility, diagnostics,
+  and expert judgement carry substantial weight. This is a defining feature, not
+  an oversight.
+- **Subjectivity is explicit and bounded, not eliminated.** Hypothesis selection,
+  category values, and several metrics are subjective; discrete categories and
+  conditional rescaling are the tools used to contain that subjectivity, and
+  weight sensitivity analysis is used to test it.
+- **Parameter vs. structural uncertainty are handled inconsistently by
+  necessity.** Standard statistical machinery is used for parameter uncertainty
+  but deliberately set aside for model-structure uncertainty — an acknowledged
+  internal tension.
+- **Tails and bimodality are the weak points.** Normal approximations may
+  misrepresent asymmetric tails (which the HCR depends on), and the bigeye
+  bimodality — two data-indistinguishable states of nature — limits how far the
+  risk analysis can guide management. Both are flagged for future work via
+  improved assessments and MSE.
+
+## References
+
+::: {#refs}
+:::

@@ -1,0 +1,92 @@
+---
+title: "Assessment of Jumbo Squid in the SE Pacific — State-Space Biomass Dynamics Model & ENSO Impacts"
+subtitle: "SC13-SQ07 (China — Shanghai Ocean University)"
+author: "Juan-Carlos Quiroz"
+date: "2026-07-12"
+categories: ["Working paper summary"]
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+  pdf:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    include-in-header:
+      text: |
+        \usepackage{titling}
+        \pretitle{%
+          \begin{center}
+          \includegraphics[width=0.32\textwidth]{../images/logo_calamasur_pota.png}\\[1.5em]
+          \LARGE
+        }
+        \posttitle{\par\end{center}}
+        \postdate{\par\vspace{0.8em}\normalsize\textbf{Category:} Working paper summary\end{center}}
+---
+
+## Document
+
+A stock assessment paper by China [@li2025china] (Gang Li & Xinjun Chen,
+National Data Centre for Distant-water Fisheries of China / Shanghai Ocean
+University), presented as SC13-SQ07 to the 13th Meeting of the SPRFMO Scientific
+Committee (8–13 September 2025, Wellington, New Zealand).
+
+## Subject
+
+A regional stock assessment of jumbo squid (*Dosidicus gigas*) in the Southeast
+Pacific, combining catch and multi-fleet abundance indices with environmental
+drivers. Its distinguishing feature is an explicit test of how the El Niño–La Niña
+(ENSO) cycle affects population dynamics, treating *D. gigas* as a single stock
+unit across the region (per recent genetic evidence).
+
+## Methods
+
+A **Bayesian state-space surplus production (Pella-Tomlinson) model**, fitted in
+WinBUGS via MCMC. Four abundance indices were used: Peruvian and Chilean CPUE from
+CALAMASUR, plus the Chinese squid-jigging fleet CPUE standardized with a
+**Generalized Additive Model (GAM)** using a gamma distribution and environmental
+covariates (SST, chlorophyll-a, salinity, Niño 1+2 index) and spatiotemporal
+terms. Catch data (2012–2024) came from FAO plus national statistics.
+**Seven environment-dependent models** were tested, letting carrying capacity *K*,
+intrinsic growth *r*, and shape *s* vary between El Niño and La Niña phases (defined
+by Niño 1+2 SST anomalies). One base scenario plus three prior-sensitivity
+scenarios were run.
+
+## Key results
+
+- The GAM confirmed year, month and salinity as the main CPUE drivers; nominal and
+  standardized CPUE both peaked in 2015 and were lowest in 2024.
+- Among the seven environment-dependent models, the **Kr model** (both *K* and *r*
+  vary with ENSO) had the lowest DIC and was best supported — climate drives
+  fluctuations in both carrying capacity and growth rate.
+- Base-scenario MSY ≈ **1.19–1.35 million tonnes** (traditional model); the
+  environment-dependent model gave MSY around 1.3–1.6 Mt, differing between
+  El Niño and La Niña phases.
+- B~2012~/K ≈ 0.5, indicating the stock was at roughly half of unexploited
+  biomass at the start of the series.
+- **Kobe-plot diagnostics show the stock has been sustainable since 2013** — no
+  overfishing and not overfished. Terminal-year probability of healthy status was
+  58.6–73.1% (traditional model) and **70.9–88.3% (environment-dependent model)**.
+
+## Main conclusion
+
+[The stock is **neither overfished nor undergoing overfishing**, and has remained
+healthy since 2013 with catch consistently below MSY]{.highlight}. Notably, despite
+the sharp decline in *D. gigas* landings in 2024, the stock stayed healthy — a
+pattern the authors link to the influence of El Niño on population dynamics. The
+environment-dependent (Kr) model reinforces that climate-driven variability in
+carrying capacity and growth rate is central to the stock's behaviour.
+
+## Way forward
+
+Continue integrating environmental (ENSO) drivers into the assessment, given the
+strong sensitivity of carrying capacity and growth rate to climate. Further
+refinement of the standardized CPUE indices and the environment-dependent model
+structure would improve reference points and terminal-year status estimates.
+
+## References {.unnumbered}
+
+::: {#refs}
+:::
+

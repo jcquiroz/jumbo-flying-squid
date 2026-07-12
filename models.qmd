@@ -1,0 +1,150 @@
+---
+title: "Jumbo Flying Squid Models"
+subtitle: "Description and comparison of stock-assessment models for the Southeast Pacific jumbo flying squid (*Dosidicus gigas*)."
+format: html
+---
+
+## Context
+
+Three stock-assessment models were presented for the Southeast Pacific jumbo
+flying squid (*Dosidicus gigas*). Each takes a different modelling approach and
+data source; select a card to open its summary.
+
+::: {.model-cards}
+
+<a class="model-card" href="docs/SC13-Obs03-CALAMASUR-summary.qmd">
+<span class="model-card-tag">CALAMASUR · Peru</span>
+<span class="model-card-title">Calamasur stock assessment</span>
+<span class="model-card-desc">Stock assessment of jumbo flying squid with an environment-driven biomass dynamics model.</span>
+</a>
+
+<a class="model-card" href="docs/SC13-SQ06-CHL-SPiCT-summary.qmd">
+<span class="model-card-tag">SC13-SQ06 · Chile</span>
+<span class="model-card-title">SPiCT — FAO area 87</span>
+<span class="model-card-desc">Update of the SPiCT surplus-production model applied to <em>Dosidicus gigas</em> in FAO area 87.</span>
+</a>
+
+<a class="model-card" href="docs/SC13-SQ07-CHN-state-space-summary.qmd">
+<span class="model-card-tag">SC13-SQ07 · China</span>
+<span class="model-card-title">State-space model & ENSO</span>
+<span class="model-card-desc">State-space biomass dynamics assessment examining the impacts of ENSO on the stock.</span>
+</a>
+
+:::
+
+## How the Chile, China & CALAMASUR Models Differ
+
+### Why the three assessments disagree
+
+All three groups assessed the same species (*Dosidicus gigas*), the same region
+(Southeast Pacific / FAO Area 87), and broadly the same catch data updated to 2024
+— including the sharp ~52% drop in landings in 2024. Yet they reached different
+verdicts on stock status. [The divergence comes almost entirely from **model
+architecture** and **how each model treats the 2024 catch collapse and
+environmental variability**, not from the underlying data]{.highlight}. The
+sections below walk through where the models agree and where they part ways.
+
+### The three modelling approaches at a glance
+
+| Dimension | **Chile — SPiCT** [@paya2025spict] | **China — Bayesian state-space** [@li2025china] | **CALAMASUR — Depletion + Pella-Tomlinson** [@roaureta2025calamasur] |
+|---|---|---|---|
+| Model family | Surplus production (Pella-Tomlinson) in **continuous time**, state-space | Surplus production (Pella-Tomlinson) in **discrete (annual) time**, state-space | **Two-stage**: monthly generalized *depletion* model → Pella-Tomlinson surplus production |
+| Estimation | Maximum likelihood (TMB) | Bayesian MCMC (WinBUGS) | Non-Bayesian hierarchical (ADMB) |
+| Time step | Continuous (month/quarter capable) | Annual | Stage 1 monthly; Stage 2 annual |
+| Data used | Catch + 6 country CPUE indices (or 1 global) | Catch + 4 fleet indices (Peru, Chile, Asia) | Monthly catch, **effort** & mean weight (3 fleets) + FAO annual landings |
+| Uses fishing **effort**? | No (index-based) | No (index-based) | **Yes** — depletion model is effort-driven, not CPUE-driven |
+| Environment in model | Not explicit (discussed as caveat) | **Explicit** — K, r, s vary by ENSO phase; 7 models tested | **Explicit** — r (and tested K, s) vary by El Niño/La Niña; 16 hypotheses |
+| Time span | 2001–2024 (and 2012–2024) | 2012–2024 | 2012–2024 (Stage 1); 1990–2024 (Stage 2) |
+| 2025/terminal verdict | Kobe **red zone** (best case) | **Healthy** since 2013 (70–88% prob.) | **Not overfished**, possibly overfishing |
+
+### Where they fundamentally differ
+
+#### 1. Depletion model vs. pure production model
+
+The single biggest structural difference is CALAMASUR's **two-stage depletion
+approach**. Chile (SPiCT) and China both fit a *surplus production model directly
+to catch and a CPUE abundance index* — they infer biomass from the relationship
+between catch and a relative abundance signal. CALAMASUR instead first fits a
+**generalized depletion model** at monthly steps that uses **fishing effort** (not
+CPUE) as the mechanistic driver, tracking within-season depletion and recruitment
+pulses for each fleet; the biomass series it produces then *feeds* a Pella-Tomlinson
+model at Stage 2.
+
+This matters because production models assume the CPUE index is proportional (or a
+known function) of true abundance — an assumption widely questioned for fast-growing,
+highly migratory squid. CALAMASUR's design deliberately avoids relying on
+standardized CPUE as an abundance index, estimating natural mortality *inside* the
+model instead (≈2.0/yr, consistent with the short life cycle).
+
+#### 2. How the environment enters
+
+China and CALAMASUR both build the ENSO cycle **into** the model, letting productivity
+parameters switch between El Niño and La Niña regimes — China favoured a model where
+both carrying capacity *K* and growth rate *r* vary (the "Kr" model), while CALAMASUR
+found best support for **only *r*** varying (higher in El Niño: 2.93/yr vs 0.48/yr in
+La Niña). Chile's SPiCT run does **not** encode the environment explicitly; the
+authors instead flag environmental variability and the three squid phenotypes as
+caveats to be addressed in future work.
+
+#### 3. What each does with the 2024 catch drop
+
+This is the crux of the differing verdicts:
+
+- **China** interprets the healthy stock *despite* the 2024 landings collapse as
+  evidence of an El Niño effect on population dynamics — the drop reflects
+  environment/availability, not depletion. Verdict: still healthy.
+- **CALAMASUR** sees a stock in a **regime of wide fluctuations** with no sustained
+  downward biomass trend and exploitation mostly below 40%; not overfished, but the
+  rising exploitation rate means overfishing *may* be occurring, and MSY/B~MSY~ are
+  judged inadequate reference points.
+- **Chile** reads the 52% catch reduction plus a **general decline in the abundance
+  indices** as a genuine downturn, placing the 2025 stock in the Kobe **red zone**
+  (in the best-fitting, six-index case). SPiCT trusts the declining CPUE signal more
+  directly.
+
+#### 4. Reference points and management outputs
+
+Chile's SPiCT produces conventional Kobe-plot status (B/B~MSY~, F/F~MSY~) and explicit
+**2026 TAC advice** (267–989 kt across cases; ~467 kt in the best case). China produces
+Kobe status with terminal-year **healthy-status probabilities** (58–88%). CALAMASUR
+argues that under strong fluctuations **MSY and B~MSY~ are not valid reference points**
+and a standard Kobe plot cannot be built, calling instead for new environment-aware
+reference points based on mean latent productivity (still imprecise).
+
+### Points of genuine agreement
+
+Despite the different headlines, the three assessments converge on several things:
+the stock is heavily influenced by the **ENSO cycle**; **biomass fluctuates widely**
+rather than showing a clean trend; **exploitation has been rising** in recent years;
+and the **standardized CPUE indices need improvement** (spatiotemporal structure,
+multiple phenotypes/sizes). Both China and CALAMASUR independently conclude that
+environmental cycles drive productivity, and even Chile — while not modelling it —
+names the three phenotypes and environmental variability as the key unresolved issues.
+
+### How to read the disagreement
+
+The spread of verdicts is best understood as a **model-structure spectrum** rather
+than a data dispute:
+
+- The more a model **trusts declining CPUE as a direct abundance signal** (Chile,
+  SPiCT), the more pessimistic the status.
+- The more a model **attributes the 2024 drop to environment/availability** (China),
+  the more optimistic the status.
+- The more a model **relies on effort-based depletion dynamics and treats MSY as
+  unreliable under fluctuations** (CALAMASUR), the more it lands on a cautious middle
+  — "not overfished, watch the exploitation rate."
+
+No single model is definitively "right"; each encodes a different, defensible
+hypothesis about *why* catches fell in 2024. That is precisely why the SPRFMO Squid
+Working Group runs them in parallel.
+
+## Sources
+
+- [Update of the SPiCT applied to Dosidicus gigas in FAO area 87](docs/last-sprfmo-models-jumbo-squid/SC13-Obs03-CALAMASUR-Stock-assessment-of-jumbo-flying-squid-.pdf)
+- [Assessment of jumbo squid in Southeast Pacific Ocean based on state-space biomass dynamics model and impacts of ENSO](docs/last-sprfmo-models-jumbo-squid/SC13-SQ07-CHN-Assessment-of-jumbo-squid-in-Southeast-Pacific-Ocean-based-on-state-space-biomass-dynamics-model-and-impacts-of-ENSO-.pdf)
+- [Stock assessment of jumbo flying squid](docs/last-sprfmo-models-jumbo-squid/SC13-Obs03-CALAMASUR-Stock-assessment-of-jumbo-flying-squid-.pdf)
+
+
+
+
+

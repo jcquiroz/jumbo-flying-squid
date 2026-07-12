@@ -1,0 +1,98 @@
+---
+title: "Update of the SPiCT applied to *Dosidicus gigas* in FAO Area 87"
+subtitle: "SC13-SQ06 (Chile — IFOP)"
+author: "Juan-Carlos Quiroz"
+date: "2026-07-12"
+categories: ["Working paper summary"]
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+  pdf:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    include-in-header:
+      text: |
+        \usepackage{titling}
+        \pretitle{%
+          \begin{center}
+          \includegraphics[width=0.32\textwidth]{../images/logo_calamasur_pota.png}\\[1.5em]
+          \LARGE
+        }
+        \posttitle{\par\end{center}}
+        \postdate{\par\vspace{0.8em}\normalsize\textbf{Category:} Working paper summary\end{center}}
+---
+
+## Document
+
+A stock assessment paper by Chile [@paya2025spict], presented as
+SC13-SQ06 to the 13th Meeting of the SPRFMO Scientific Committee (8–13 September
+2025, Wellington, New Zealand). Dated September 2025.
+
+## Subject
+
+An updated stock assessment of jumbo squid (*Dosidicus gigas*) in FAO Area 87 —
+which spans the SPRFMO high-seas area plus the Ecuadorian, Peruvian and Chilean
+EEZs. Its main advance over previous assessments is the use of data up to 2024,
+reducing the two-year delay of earlier work and bringing the assessment closer to
+in-season conditions.
+
+## Methods
+
+The assessment applies the **Stochastic Production model in Continuous Time
+(SPiCT)** — a state-space, Pella-Tomlinson surplus production model that separates
+random stock-dynamics variability from observation error and allows assessment at
+monthly/quarterly steps. Six country CPUE abundance indices were compiled (two
+Chinese fleet indices, Chinese Taipei, Korea, Chile, Peru), with an updated
+Chinese index provided by Chinese scientists. A **sensitivity analysis of seven
+cases** tested the effect of using a single global index versus six
+country-specific indices, fixing the Schaefer production curve, and applying a
+prior on the intrinsic growth rate *r*. Two data spans were compared: full series
+(2001–2024) and short series (2012–2024).
+
+## Key results
+
+- Total squid catch fell sharply — a **52% reduction in 2024** — and the abundance
+  indices show a **general decreasing trend**.
+- Biomass rose from 2001 to ~2010, then declined; fishing mortality (F) shows the
+  inverse pattern, rising steeply in recent years.
+- *r* and *K* varied widely across cases and were negatively correlated, yielding
+  an **MSY of ~950 kt** (range 906–950 kt across cases). *r* estimates
+  (~0.8–2.4) sit in the range expected for a fast-growing, short-lived squid when
+  priors are used.
+- **2025 stock status is uncertain**: of the seven cases, four fell in the Kobe
+  red zone, one yellow, two green. Cases fitted to the six country indices placed
+  the stock in the red zone.
+- Case 7 (free productivity curve, six indices, *r* prior) had the **best
+  retrospective pattern** and estimated a 2025 status in the red zone with a 2026
+  TAC of **467 kt** (similar to the 2024 catch).
+- 2026 TAC under F~MSY~ ranged from **267 kt (Case 6) to 989 kt (Case 1)**.
+- The short-series (2012–2024) sensitivity gave similar MSY (941–950 kt) and TAC
+  (271–756 kt); two of seven cases did not converge, and most placed 2025 in the
+  red zone.
+
+## Main conclusion
+
+[Stock status is highly uncertain but the most reliable case (best retrospective
+pattern) places the 2025 stock in the Kobe **red zone**]{.highlight} — i.e.
+potentially overfished and/or undergoing overfishing — a notable contrast with the
+"healthy" 2022 status discussed in 2024, driven by the 52% catch drop and
+declining indices. MSY converges around ~950 kt, but reference points and TAC
+advice remain sensitive to the choice of abundance index.
+
+## Way forward
+
+Improve and standardize the CPUE abundance indices (incorporating spatiotemporal
+variability and different squid sizes across regions), since SPiCT assumes indices
+are unbiased indicators of the whole stock. Account for the **three phenotypes** of
+*D. gigas* (which likely have distinct growth rates and carrying capacities) and
+for environmentally driven interannual variability in productivity, which the
+single-stock process-error assumption may not fully capture.
+
+## References {.unnumbered}
+
+::: {#refs}
+:::
+

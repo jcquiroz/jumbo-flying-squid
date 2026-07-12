@@ -1,0 +1,32 @@
+/*-- scss:defaults --*/
+
+// Fonts (Metrophobic + Jura are loaded via styles.css)
+$font-family-sans-serif: "Metrophobic", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !default;
+$headings-font-family: "Jura", $font-family-sans-serif !default;
+
+// Font weights
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-bold: 900 !default;
+$headings-font-weight: 600 !default;
+
+/*-- scss:rules --*/
+
+body {
+  font-family: $font-family-sans-serif;
+  font-size: $font-weight-normal;
+}
+
+h1, h2, h3, h4, h5, h6,
+.hero-title,
+.navbar-brand,
+.navbar {
+  font-family: $headings-font-family;
+}
+
+// Modular type scale (ratio ~1.2) for content headings h2–h6
+h2 { font-size: 2.074rem; }
+h3 { font-size: 1.728rem; }
+h4 { font-size: 1.44rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
