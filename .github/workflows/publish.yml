@@ -1,0 +1,43 @@
+name: Quarto Publish
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      # Installs Quarto and TinyTeX. TinyTeX is required because the doc pages
+      # declare a `pdf` format (the "Other Formats → PDF" links) that CI renders
+      # with LaTeX. GH_TOKEN avoids GitHub API rate-limiting during the install.
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # The SAC-11 page renders its Mermaid diagram to an image for the PDF,
+      # which needs a headless browser. GitHub runners don't ship one Quarto
+      # can reliably find, so install Chrome Headless Shell explicitly.
+      - name: Install Chrome Headless Shell (Mermaid → PDF)
+        run: quarto install chrome-headless-shell --no-prompt
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Renders the project (HTML + PDF) and pushes the output to the gh-pages
+      # branch. The action commits a .nojekyll marker automatically.
+      - name: Render and publish to gh-pages
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
