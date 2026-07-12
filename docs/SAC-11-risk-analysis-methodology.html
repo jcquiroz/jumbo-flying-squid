@@ -298,7 +298,7 @@ window.Quarto = {
 <h3 data-number="4.4" class="anchored" data-anchor-id="step-4-combining-distributions-across-models-model-averaging"><span class="header-section-number">4.4</span> Step 4 — Combining distributions across models (model averaging)</h3>
 <p>The distributions are combined by <strong>model averaging</strong> <span class="citation" data-cites="hoeting1999bma">(<a href="#ref-hoeting1999bma" role="doc-biblioref">Hoeting et al. 1999</a>)</span> weighted by the rescaled model probabilities (Equation 6):</p>
 <p><span class="math display">\[P(\text{Quantity}) = \sum_{m \in \text{Models}} P(\text{Quantity} \mid \text{Model} = m)\, P(\text{Model} = m)\]</span></p>
-<p>evaluated over a grid of the quantity fine and wide enough to resolve the tails (which matter because the HCR turns on tail probabilities such as <span class="math inline">\(P(F &gt; F_{LIMIT}) &gt; 0.1\)</span>). The <strong>cumulative distribution function</strong> is then formed by trapezoidal integration (Equation 7) and used to read off the probability of exceeding a reference point; where the normal approximation is used, the normal CDF is used directly.</p>
+<p>evaluated over a grid of the quantity fine and wide enough to resolve the tails (which matter because the HCR turns on tail probabilities such as <span class="math inline">\(P(F &gt; F_{LIMIT}) &gt; 0.1\)</span>). The <strong>cumulative distribution function</strong> is then formed by trapezoidal integration (Equation) and used to read off the probability of exceeding a reference point; where the normal approximation is used, the normal CDF is used directly.</p>
 </section>
 <section id="step-5-presenting-the-risk-analysis" class="level3" data-number="4.5">
 <h3 data-number="4.5" class="anchored" data-anchor-id="step-5-presenting-the-risk-analysis"><span class="header-section-number">4.5</span> Step 5 — Presenting the risk analysis</h3>
@@ -337,7 +337,8 @@ window.Quarto = {
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
-<pre class="mermaid mermaid-js" data-label="fig-workflow">flowchart TD
+<pre class="mermaid mermaid-js" data-label="fig-workflow">%%{init: {"flowchart": {"subGraphTitleMargin": {"top": 10, "bottom": 30}}}}%%
+flowchart TD
   subgraph A["A · Frame the problem"]
     S1["1 · Frame the HCR question probabilistically"] --&gt; S2["2 · Reject the single 'best assessment'"]
   end
