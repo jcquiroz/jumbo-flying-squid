@@ -8,9 +8,15 @@
   --content-width: 950px;
 }
 
-/* Constrain the rendered document to the hero-content width */
+/* Constrain the rendered document to the hero-content width.
+   Use `width: min(...)` rather than `max-width` so the box sizes against the
+   available column (not its content): with `margin-inline: auto` a bare
+   `max-width` makes this a shrink-to-fit box, and a wide non-wrapping child
+   (e.g. a nowrap MathJax display equation) would inflate it past the grid
+   column and overlap the right-hand TOC. `min(…, 100%)` yields the full
+   950px on TOC-less pages and shrinks to the column when a TOC is present. */
 #quarto-document-content {
-  max-width: var(--content-width);
+  width: min(var(--content-width), 100%);
   margin-inline: auto;
   padding-inline: 1rem;
   box-sizing: border-box;
