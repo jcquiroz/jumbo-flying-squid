@@ -231,7 +231,7 @@ $$P(\text{Quantity}) = \sum_{m \in \text{Models}} P(\text{Quantity} \mid \text{M
 evaluated over a grid of the quantity fine and wide enough to resolve the tails
 (which matter because the HCR turns on tail probabilities such as
 $P(F > F_{LIMIT}) > 0.1$). The **cumulative distribution function** is then formed
-by trapezoidal integration (Equation 7) and used to read off the probability of
+by trapezoidal integration (Equation) and used to read off the probability of
 exceeding a reference point; where the normal approximation is used, the normal
 CDF is used directly.
 
@@ -329,6 +329,7 @@ problem framing to management advice.
 ```{mermaid}
 %%| label: fig-workflow
 %%| fig-cap: "Pragmatic risk-analysis workflow: seventeen steps grouped into six phases (A–F)."
+%%{init: {"flowchart": {"subGraphTitleMargin": {"top": 10, "bottom": 30}}}}%%
 flowchart TD
   subgraph A["A · Frame the problem"]
     S1["1 · Frame the HCR question probabilistically"] --> S2["2 · Reject the single 'best assessment'"]
