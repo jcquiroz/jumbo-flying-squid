@@ -61,6 +61,9 @@ abstract: |
   reliability and expert judgement, and combining the resulting distributions
   into probability statements that can directly inform harvest control rules.
 keywords: [Dosidicus gigas, SPRFMO, surplus production, depletion model, ENSO, risk analysis, reference points, model averaging]
+# Concept DOI — always resolves to the newest version on Zenodo. Quarto renders
+# this in the HTML title block and as a citation_doi meta tag (Google Scholar).
+doi: 10.5281/zenodo.21361536
 bibliography: bibliography.bib
 # MAINTAINER NOTE — this page mirrors the working paper kept in the
 # `manuscript-modelos` project. To refresh it: copy modelos.qmd over this file,
