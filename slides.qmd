@@ -1,0 +1,51 @@
+---
+title: "Slides"
+subtitle: "Three assessments, just one squid, one decision — reconciling competing stock assessments through probabilistic risk analysis."
+format: html
+---
+
+## The talk
+
+A presentation for the **SPRFMO Third Squid Workshop (SCW18)**, drawing together the
+material on this site: why the three 2025 stock assessments of jumbo flying squid
+(*Dosidicus gigas*) disagree, and how a probabilistic risk-analysis framework can
+reconcile them.
+
+The deck walks through each assessment in turn — [CALAMASUR](docs/SC13-Obs03-CALAMASUR-summary.qmd),
+[Chile's SPiCT](docs/SC13-SQ06-CHL-SPiCT-summary.qmd) and
+[China's Bayesian state-space model](docs/SC13-SQ07-CHN-state-space-summary.qmd) — before
+turning to the [risk-analysis framework](docs/SAC-11-risk-analysis-methodology.qmd), with
+particular attention to how competing hypotheses are **hierarchized and weighted**.
+
+[Open the slides](slides/modelos-slides.html){.btn .btn-primary .btn-lg role="button" target="_blank"}
+[Download PDF](slides/modelos-slides.pdf){.btn .btn-outline-primary .btn-lg role="button" target="_blank"}
+
+::: {.callout-note appearance="simple"}
+The slides open in a new tab. Use the **arrow keys** or **space** to advance, `F` for
+full screen, `O` for a slide overview, and `S` for speaker notes. The 31-page PDF is the
+handout version, with all build-up steps shown.
+:::
+
+## What it covers
+
+::: {.model-cards}
+
+<a class="model-card" href="slides/modelos-slides.html" target="_blank">
+<span class="model-card-tag">Section 1 · The disagreement</span>
+<span class="model-card-title">Three assessments, three verdicts</span>
+<span class="model-card-desc">The same species, region and catch data to 2024 — yet CALAMASUR, Chile and China reach markedly different conclusions on stock status.</span>
+</a>
+
+<a class="model-card" href="slides/modelos-slides.html" target="_blank">
+<span class="model-card-tag">Section 2 · Why they differ</span>
+<span class="model-card-title">A model-structure spectrum</span>
+<span class="model-card-desc">The divergence comes from model architecture and how each treats the 2024 decline and ENSO — not from the underlying data.</span>
+</a>
+
+<a class="model-card" href="slides/modelos-slides.html" target="_blank">
+<span class="model-card-tag">Section 3 · The framework</span>
+<span class="model-card-title">Hierarchize, weight, combine</span>
+<span class="model-card-desc">Carrying the competing models as weighted hypotheses in a three-level tree, then combining them into probability statements that can seed a harvest control rule.</span>
+</a>
+
+:::
