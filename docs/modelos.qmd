@@ -68,10 +68,22 @@ bibliography: bibliography.bib
 #   1. `csl: apa.csl` below       (the manuscript project supplies this via its
 #                                  own _quarto.yml, which does not apply here)
 #   2. `execute: freeze: true`    (CI installs no R; the ENSO chunk must not run)
-#   3. these comments
-#   4. the "Cite this work" callout in the body
+#   3. `format-links` below       (points at the pre-built Typst PDF)
+#   4. these comments
+#   5. the "Cite this work" callout in the body
 # Then re-render locally with R so _freeze/docs/modelos/ refreshes, and commit
 # _freeze along with the page.
+#
+# The PDF is NOT declared as a `format:` here, unlike the sibling SC13 pages.
+# Two reasons: freeze is stored per-format (only html.json exists, so a pdf
+# format would make CI execute R and fail), and a LaTeX render would look
+# nothing like the Typst PDF archived on Zenodo. Instead docs/modelos.pdf is
+# copied from manuscript-modelos/_manuscript/modelos.pdf — the same file as the
+# deposit — and linked below. Refresh it whenever the paper changes.
+other-links:
+  - text: PDF
+    href: modelos.pdf
+    icon: file-pdf
 csl: apa.csl
 # The ENSO figure is an R chunk and CI has no R. Frozen results are committed
 # under _freeze/, so the site renders this page without executing anything.

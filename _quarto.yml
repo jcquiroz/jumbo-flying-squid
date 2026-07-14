@@ -20,6 +20,9 @@ project:
   resources:
     - slides/modelos-slides.html
     - slides/modelos-slides.pdf
+    # Typst-rendered working paper, linked from docs/modelos.qmd via
+    # format-links. Same file as the Zenodo deposit; not rendered here.
+    - docs/modelos.pdf
 
 website:
   title: "Jumbo Flying Squid"
