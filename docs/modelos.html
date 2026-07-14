@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Juan-Carlos Quiroz">
+<meta name="author" content="Renato Gozzer">
+<meta name="keywords" content="Dosidicus gigas, SPRFMO, surplus production, depletion model, ENSO, risk analysis, reference points, model averaging">
+
+<title>Reconciling competing stock assessments for jumbo flying squid through probabilistic risk analysis – Jumbo Flying Squid</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-8748f2ea7a2572d45809cff6fb873578.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Jumbo Flying Squid</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home+</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../models.html"> 
+<span class="menu-text">Models+</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../docs/modelos.html" aria-current="page"> 
+<span class="menu-text">Risk+</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../slides.html"> 
+<span class="menu-text">Slides+</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About+</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sec-intro" id="toc-sec-intro" class="nav-link active" data-scroll-target="#sec-intro">Introduction</a></li>
+  <li><a href="#sec-models" id="toc-sec-models" class="nav-link" data-scroll-target="#sec-models">The three SPRFMO assessments</a>
+  <ul class="collapse">
+  <li><a href="#sec-calamasur" id="toc-sec-calamasur" class="nav-link" data-scroll-target="#sec-calamasur">CALAMASUR — two-stage environment-driven depletion + production model</a></li>
+  <li><a href="#sec-spict" id="toc-sec-spict" class="nav-link" data-scroll-target="#sec-spict">Chile (IFOP) — SPiCT surplus-production model</a></li>
+  <li><a href="#sec-china" id="toc-sec-china" class="nav-link" data-scroll-target="#sec-china">China (Shanghai Ocean University) — Bayesian state-space model with ENSO</a></li>
+  </ul></li>
+  <li><a href="#sec-comparison" id="toc-sec-comparison" class="nav-link" data-scroll-target="#sec-comparison">Model comparison: why the three assessments disagree</a></li>
+  <li><a href="#sec-risk" id="toc-sec-risk" class="nav-link" data-scroll-target="#sec-risk">A probabilistic risk-analysis framework for jumbo squid</a></li>
+  <li><a href="#sec-discussion" id="toc-sec-discussion" class="nav-link" data-scroll-target="#sec-discussion">Discussion: management implications</a></li>
+  <li><a href="#sec-conclusions" id="toc-sec-conclusions" class="nav-link" data-scroll-target="#sec-conclusions">Way forward and conclusions</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Reconciling competing stock assessments for jumbo flying squid through probabilistic risk analysis</h1>
+<p class="subtitle lead">A multi-model synthesis for <em>Dosidicus gigas</em> in the South-East Pacific (SPRFMO)</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading">Affiliations</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Juan-Carlos Quiroz <a href="mailto:jcquiroz@facilevisual.com" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0002-6092-8551" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Facile Visual &amp; CALAMASUR
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Renato Gozzer <a href="mailto:renato.gozzer@ocean-action.org" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0002-1156-4552" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Innovations for Ocean Action Foundation
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="block-title">Abstract</div>
+    <p>A risk-assessment framework is presented to identify sustainable management actions for the jumbo flying squid (<em>Dosidicus gigas</em>) in the South-Eastern Pacific Ocean. It applies reference-point-based management quantities inside a probabilistic setup that accommodates multiple, competing hypotheses drawn from the current stock-assessment models developed under the umbrella of the South Pacific Regional Fisheries Management Organisation (SPRFMO). By explicitly quantifying uncertainty instead of relying on point estimates from a single “best” assessment model, the framework reconciles the tension between competing candidate models used for inference and decision-making. Risk is defined, following FAO guidelines, as “the probability of something undesirable happening” — here, exceeding the reference points that trigger management action. Three SPRFMO parties presented stock-assessment methodologies for jumbo flying squid to the 2025 Scientific Committee: the CALAMASUR approach, the most mechanistic, operating at monthly time steps and explicitly modelling fleet-specific depletion and fishing operations before scaling up to a production model; the Chilean SPiCT model, more data-modest, relying on annual CPUE indices and frequentist maximum likelihood; and the Chinese model, fully Bayesian, standardising CPUE via GAM before incorporating it into a state-space model. These assessments arrive at markedly different conclusions despite using overlapping data from the same fishery. The framework yields probabilistic statements about whether feasible reference points have been, or are likely to be, exceeded, tying together three actionable components: identifying alternative hypotheses about population dynamics, weighting them by model reliability and expert judgement, and combining the resulting distributions into probability statements that can directly inform harvest control rules.</p>
+  </div>
+</div>
+
+<div>
+  <div class="keywords">
+    <div class="block-title">Keywords</div>
+    <p>Dosidicus gigas, SPRFMO, surplus production, depletion model, ENSO, risk analysis, reference points, model averaging</p>
+  </div>
+</div>
+
+</header>
+
+
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>This page mirrors the working paper maintained in the <code>manuscript-modelos</code> project. Edit it there, then re-render to refresh the copy published here.</p>
+</div>
+</div>
+</div>
+<section id="sec-intro" class="level1">
+<h1>Introduction</h1>
+<p>The jumbo flying squid (<em>Dosidicus gigas</em>) supports the world’s largest invertebrate fishery — over one million tonnes in recent years, the fifteenth largest of all fisheries — prosecuted by a multinational jigging fleet distributed across the Eastern Pacific from Central America to southern Chile <span class="citation" data-cites="Rosa2013DosidicusGH">(<a href="#ref-Rosa2013DosidicusGH" role="doc-biblioref">Rosa et al., 2013</a>)</span>. The species is endemic to the Eastern Pacific, with fishing grounds concentrated off Peru (2–10°S) and on the high seas off Peru (3–18°S) and Central America (5–10°N), and it has undergone a recent poleward range expansion (Waluda &amp; Rodhouse 2005; <span class="citation" data-cites="Rosa2013DosidicusGH">Rosa et al. (<a href="#ref-Rosa2013DosidicusGH" role="doc-biblioref">2013</a>)</span>). Habitat-modelling studies show that suitable habitat expands during spring–autumn and contracts sharply in winter off Peru, with catch-per-unit-effort (CPUE) closely tracking habitat suitability <span class="citation" data-cites="Yu2019">(<a href="#ref-Yu2019" role="doc-biblioref">Yu et al., 2019</a>)</span>. Its short, semelparous life cycle, fast growth, and strong sensitivity to environmental variation — particularly the El Niño–Southern Oscillation (ENSO) — make it both economically important and unusually difficult to assess <span class="citation" data-cites="Gilly2006 Ibez2016">(<a href="#ref-Gilly2006" role="doc-biblioref">Gilly et al., 2006</a>; <a href="#ref-Ibez2016" role="doc-biblioref">Ibáñez et al., 2016</a>)</span>.</p>
+<p>The fishery is managed within the South Pacific Regional Fisheries Management Organisation (SPRFMO). Current conservation and management measures rely on effort- and capacity-based controls (vessel-number and gross-tonnage caps). However, jigging efficiency is strongly environment-driven — modulated by upwelling, sea-surface temperature, and ENSO phase — so capping the size of the fleet does not translate directly into a cap on fishing pressure <span class="citation" data-cites="Yu2018 Fang2023">(<a href="#ref-Fang2023" role="doc-biblioref">Fang et al., 2023</a>; <a href="#ref-Yu2018" role="doc-biblioref">Yu &amp; Chen, 2018</a>)</span>. This motivates complementary catch-based, environment-aware measures.</p>
+<p>A more immediate obstacle to management advice is that the science itself does not speak with one voice. Three SPRFMO parties presented stock assessments for jumbo flying squid to the 13th meeting of the SPRFMO Scientific Committee (SC13; 8–13 September 2025, Wellington, New Zealand). Although all three assess the same species, the same region (South-East Pacific / FAO Area 87), and broadly the same catch data updated to 2024 — including a sharp ~52% drop in landings in 2024 — they reach different verdicts on stock status. The divergence comes almost entirely from model architecture and from how each model treats the 2024 catch decline and environmental variability, not from the underlying data. Point estimates from any single “best” model cannot express the resulting uncertainty, and picking one model discards defensible alternatives.</p>
+<p>This working paper synthesises the three competing assessments, explains why they disagree, and presents a probabilistic multi-model risk-analysis framework — adapted from the reference-point-based approach developed for tropical tunas by the Inter-American Tropical Tuna Commission (IATTC) <span class="citation" data-cites="maunder2020riskframework airesdasilva2020riskanalysis">(<a href="#ref-airesdasilva2020riskanalysis" role="doc-biblioref">Aires-da-Silva et al., 2020</a>; <a href="#ref-maunder2020riskframework" role="doc-biblioref">Maunder et al., 2020</a>)</span> — as a route to reconcile them and produce management-relevant probability statements for jumbo flying squid.</p>
+</section>
+<section id="sec-models" class="level1">
+<h1>The three SPRFMO assessments</h1>
+<p>All three assessments share the same catch history to 2024, including the 2024 landings decline (<a href="#fig-landings" class="quarto-xref">Figure&nbsp;1</a>), and the same broad understanding that the stock is strongly modulated by the ENSO cycle. They differ in model family, estimation paradigm, time step, use of fishing effort, and how — if at all — the environment enters the population dynamics.</p>
+<div id="fig-landings" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-landings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/Fig01AnnualLandingsData.jpg" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-landings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Annual landings of <em>Dosidicus gigas</em> in the South-East Pacific, showing the sharp ~52% reduction in 2024 that is central to the differing verdicts of the three assessments.
+</figcaption>
+</figure>
+</div>
+<section id="sec-calamasur" class="level2">
+<h2 class="anchored" data-anchor-id="sec-calamasur">CALAMASUR — two-stage environment-driven depletion + production model</h2>
+<p>The CALAMASUR assessment <span class="citation" data-cites="roaureta2025calamasur">(<a href="#ref-roaureta2025calamasur" role="doc-biblioref">Roa-Ureta &amp; Wiff, 2025</a>)</span>, presented as observer paper SC13-Obs03, is the most mechanistic of the three. It is a two-stage, environment-driven approach spanning 1990–2024. Stage 1 fits multi-annual, multi-fleet generalized depletion models to a monthly database (January 2012–December 2024) of total catch, fishing effort, and mean weight for three fleets (Peruvian, Chilean, Asian), covering &gt;99% of regional landings. Stage 2 then drives a Pella-Tomlinson surplus-production model with El Niño/La Niña transitions (NOAA’s Oceanic Niño Index; 10 transitions over 1990–2024), testing 16 hypotheses about how carrying capacity, production symmetry, and intrinsic growth rate change with the environment.</p>
+<p>Crucially, the depletion stage is effort-driven rather than CPUE-driven, so the assessment does not rely on a standardized CPUE series as an index of abundance — an assumption widely questioned for fast-growing, highly migratory squid. Natural mortality is estimated <em>inside</em> the model at ≈0.17/month (≈2.0/yr), consistent with the species’ short life cycle. The best-supported environmental hypothesis is that only the intrinsic growth rate <em>r</em> varies with the environment — higher in El Niño (2.93/yr) than in La Niña (0.48/yr). The compiled ADMB production model (a two-regime Pella-Tomlinson fit) estimates a carrying capacity K ≈ 10.85 million tonnes and a shape parameter <em>p</em> ≈ 1.97. <!-- marlikptdgsep2regp4p --></p>
+<p>The estimated biomass fluctuates widely (maxima an order of magnitude above minima) but shows no sustained downward trend, with the highest peaks before 2019; exploitation rates have risen since 2020 but remain mostly below 40% (<a href="#fig-biomass" class="quarto-xref">Figure&nbsp;2</a>). The main conclusion is that the stock is not overfished, though it may be undergoing overfishing. Because the stock has entered a regime of strong environment-driven fluctuations, MSY and B<sub>MSY</sub> are judged inadequate reference points, a standard Kobe plot cannot be built, and estimates of sustainable harvest rates (mean latent productivity) remain statistically imprecise.</p>
+<div id="fig-biomass" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-biomass-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/Fig11BiomMortExpl.jpg" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-biomass-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: CALAMASUR estimated trajectories of biomass, mortality, and exploitation rate. Biomass fluctuates widely without a sustained trend, while the exploitation rate has risen since 2020 but remains mostly below 40%.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-spict" class="level2">
+<h2 class="anchored" data-anchor-id="sec-spict">Chile (IFOP) — SPiCT surplus-production model</h2>
+<p>The Chilean assessment <span class="citation" data-cites="paya2025spict">(<a href="#ref-paya2025spict" role="doc-biblioref">Payá, 2025</a>)</span>, presented as SC13-SQ06, applies the Stochastic Production model in Continuous Time (SPiCT) — a state-space Pella-Tomlinson surplus-production model that separates process from observation error and can be run at monthly/quarterly steps — to <em>D. gigas</em> in FAO Area 87. Its main advance over previous assessments is the use of data up to 2024, reducing the two-year lag of earlier work. Six country CPUE indices were compiled (two Chinese fleet indices, Chinese Taipei, Korea, Chile, Peru), and a sensitivity analysis of seven cases tested a single global index versus six country indices, a fixed Schaefer curve, and a prior on <em>r</em>, over two data spans (2001–2024 and 2012–2024).</p>
+<p>Catch fell by ~52% in 2024, and the abundance indices show a general decreasing trend. MSY converges around ~950 kt (906–950 kt across cases). The 2025 status is uncertain — of seven cases, four fell in the Kobe red zone, one yellow, two green — but the cases fitted to the six country indices, and in particular Case 7 (free productivity curve, six indices, <em>r</em> prior) with the best retrospective pattern, place the 2025 stock in the Kobe red zone, with a 2026 TAC of ~467 kt (comparable to the 2024 catch). TAC advice under F<sub>MSY</sub> ranged widely, from 267 kt to 989 kt across cases. This is a notable contrast with the “healthy” 2022 status discussed in 2024, and the reversal is driven by a 52% catch drop and declining indices. The authors caution that SPiCT assumes indices are unbiased indicators of the whole stock, and recommend standardising CPUE and accounting for the three <em>D. gigas</em> phenotypes and environmentally driven variability.</p>
+</section>
+<section id="sec-china" class="level2">
+<h2 class="anchored" data-anchor-id="sec-china">China (Shanghai Ocean University) — Bayesian state-space model with ENSO</h2>
+<p>The Chinese assessment <span class="citation" data-cites="li2025china">(<a href="#ref-li2025china" role="doc-biblioref">Li &amp; Chen, 2025</a>)</span>, presented as SC13-SQ07, is a Bayesian state-space surplus-production (Pella-Tomlinson) model fitted in WinBUGS via MCMC, with an explicit test of how the ENSO cycle affects population dynamics. Four abundance indices were used: Peruvian and Chilean CPUE from CALAMASUR, plus the Chinese squid-jigging CPUE standardized with a Generalized Additive Model (GAM) using environmental covariates (SST, chlorophyll-<em>a</em>, salinity, Niño 1+2) and spatiotemporal terms. Seven environment-dependent models were tested, letting carrying capacity <em>K</em>, growth rate <em>r</em>, and shape <em>s</em> vary between El Niño and La Niña phases.</p>
+<p>The GAM confirmed year, month, and salinity as the main CPUE drivers, with standardized CPUE peaking in 2015 and lowest in 2024. Among the seven models, the “Kr” model (both <em>K</em> and <em>r</em> vary with ENSO) had the lowest DIC and was best supported. Base-scenario MSY ≈ 1.19–1.35 Mt (traditional model), rising to ~1.3–1.6 Mt under the environment-dependent model. Kobe diagnostics indicate the stock has been sustainable since 2013 — neither overfished nor undergoing overfishing — with a terminal-year probability of healthy status of 70.9–88.3% under the environment-dependent model (58.6–73.1% under the traditional one). Notably, despite the sharp 2024 landings decline, the stock stayed healthy, a pattern the authors attribute to El Niño’s influence on population dynamics rather than to depletion.</p>
+</section>
+</section>
+<section id="sec-comparison" class="level1">
+<h1>Model comparison: why the three assessments disagree</h1>
+<p><a href="#tbl-comparison" class="quarto-xref">Table&nbsp;1</a> summarises the three approaches. The single biggest structural difference is CALAMASUR’s two-stage depletion approach: Chile and China both fit a surplus-production model directly to catch and a CPUE abundance index, inferring biomass from the relationship between catch and a relative abundance signal, whereas CALAMASUR first fits an effort-driven depletion model and feeds its biomass series into a production model. This matters because production models assume the CPUE index is proportional to true abundance — questionable for this species — while the depletion design avoids that reliance and estimates <em>M</em> internally.</p>
+<div id="tbl-comparison" class="quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[16,28,28,28]">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Comparative overview of the three SPRFMO jumbo squid assessments.
+</figcaption>
+<div aria-describedby="tbl-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 28%">
+<col style="width: 28%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dimension</th>
+<th>Chile — SPiCT <span class="citation" data-cites="paya2025spict">(<a href="#ref-paya2025spict" role="doc-biblioref">Payá, 2025</a>)</span></th>
+<th>China — Bayesian state-space <span class="citation" data-cites="li2025china">(<a href="#ref-li2025china" role="doc-biblioref">Li &amp; Chen, 2025</a>)</span></th>
+<th>CALAMASUR — Depletion + Pella-Tomlinson <span class="citation" data-cites="roaureta2025calamasur">(<a href="#ref-roaureta2025calamasur" role="doc-biblioref">Roa-Ureta &amp; Wiff, 2025</a>)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Model family</td>
+<td>Surplus production (Pella-Tomlinson), <strong>continuous time</strong>, state-space</td>
+<td>Surplus production (Pella-Tomlinson), <strong>discrete/annual</strong>, state-space</td>
+<td><strong>Two-stage</strong>: monthly <em>depletion</em> → Pella-Tomlinson production</td>
+</tr>
+<tr class="even">
+<td>Estimation</td>
+<td>Maximum likelihood (TMB)</td>
+<td>Bayesian MCMC (WinBUGS)</td>
+<td>Non-Bayesian hierarchical (ADMB)</td>
+</tr>
+<tr class="odd">
+<td>Time step</td>
+<td>Continuous</td>
+<td>Annual</td>
+<td>Stage 1 monthly; Stage 2 annual</td>
+</tr>
+<tr class="even">
+<td>Data used</td>
+<td>Catch + 6 country CPUE indices</td>
+<td>Catch + 4 fleet indices</td>
+<td>Monthly catch, <strong>effort</strong> &amp; mean weight (3 fleets) + FAO landings</td>
+</tr>
+<tr class="odd">
+<td>Uses fishing <strong>effort</strong>?</td>
+<td>No (index-based)</td>
+<td>No (index-based)</td>
+<td><strong>Yes</strong> — depletion is effort-driven</td>
+</tr>
+<tr class="even">
+<td>Environment in model</td>
+<td>Not explicit (caveat)</td>
+<td><strong>Explicit</strong> — K, r, s vary by ENSO; 7 models</td>
+<td><strong>Explicit</strong> — r varies by El Niño/La Niña; 16 hypotheses</td>
+</tr>
+<tr class="odd">
+<td>Time span</td>
+<td>2001–2024 (and 2012–2024)</td>
+<td>2012–2024</td>
+<td>2012–2024 (Stage 1); 1990–2024 (Stage 2)</td>
+</tr>
+<tr class="even">
+<td>Terminal verdict</td>
+<td>Kobe <strong>red zone</strong> (best case)</td>
+<td><strong>Healthy</strong> since 2013 (71–88% prob.)</td>
+<td><strong>Not overfished</strong>, possibly overfishing</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>The three models also differ in how the environment enters. China and CALAMASUR build the ENSO cycle <em>into</em> the model, letting productivity switch between regimes — China favouring both <em>K</em> and <em>r</em> varying, CALAMASUR finding support for only <em>r</em> varying (<a href="#fig-enso" class="quarto-xref">Figure&nbsp;3</a>). Chile’s SPiCT does not encode the environment explicitly, flagging it instead as a caveat.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-enso" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-enso-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="modelos_files/figure-html/fig-enso-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-enso-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: El Niño–Southern Oscillation signal over the assessment period, shown as the annual mean of the Índice Costero El Niño (ICEN; monthly data 2012–2024). The shaded background classifies each year into an ENSO regime using the standard ±0.5 thresholds (El Niño ≥ 0.5, La Niña ≤ −0.5, Neutral between; dashed lines). The China and CALAMASUR models let population productivity parameters switch between these El Niño and La Niña phases.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Most consequentially, the models differ in what they make of the 2024 catch drop:</p>
+<ul>
+<li>China interprets a healthy stock <em>despite</em> the 2024 decline as evidence of an El Niño effect on availability, not depletion → still healthy.</li>
+<li>CALAMASUR sees a stock in a regime of wide fluctuations with no sustained downward trend and exploitation mostly below 40% → not overfished, but rising exploitation means overfishing <em>may</em> be occurring.</li>
+<li>Chile reads the 52% catch reduction plus declining abundance indices as a genuine downturn → 2025 in the Kobe red zone.</li>
+</ul>
+<p>The spread of verdicts is best understood as a model-structure spectrum rather than a data dispute: the more a model trusts declining CPUE as a direct abundance signal (Chile), the more pessimistic the status; the more it attributes the 2024 drop to environment/availability (China), the more optimistic; and the more it relies on effort-based depletion and treats MSY as unreliable under fluctuations (CALAMASUR), the more it lands on a cautious middle. Despite the different headlines, the three converge on several points: the stock is strongly influenced by ENSO; biomass fluctuates widely rather than trending; exploitation has been rising; and the standardized CPUE indices need improvement. No single model is definitively “right” — each encodes a different, defensible hypothesis about <em>why</em> catches fell in 2024, which is precisely why the SPRFMO Squid Working Group runs them in parallel.</p>
+</section>
+<section id="sec-risk" class="level1">
+<h1>A probabilistic risk-analysis framework for jumbo squid</h1>
+<p>Rather than choose among the three assessments, we adopt a risk analysis that carries a suite of plausible models, weights them by plausibility, and produces probability statements about whether reference points have been or are likely to be exceeded. The approach is adapted from the reference-point-based framework developed for eastern Pacific tropical tunas <span class="citation" data-cites="maunder2020riskframework airesdasilva2020riskanalysis">(<a href="#ref-airesdasilva2020riskanalysis" role="doc-biblioref">Aires-da-Silva et al., 2020</a>; <a href="#ref-maunder2020riskframework" role="doc-biblioref">Maunder et al., 2020</a>)</span>, where IATTC staff concluded that “best assessment” results were too sensitive to new data to support management advice — a situation closely mirrored by jumbo squid, where the 2024 catch drop swings the verdict from “healthy” to “red zone” depending on the model.</p>
+<p>Following FAO guidelines <span class="citation" data-cites="FAO1995">(<a href="#ref-FAO1995" role="doc-biblioref">FAO, 1995</a>)</span>, risk is defined as “the probability of something undesirable happening” — here, exceeding a target or limit reference point. Because status is judged relative to reference points, the quantities of interest are ratios (e.g.&nbsp;F<sub>cur</sub>/F<sub>MSY</sub>, B<sub>cur</sub>/B<sub>MSY</sub>), and the framework concentrates on two categories of uncertainty: parameter uncertainty within a model, and model-structure uncertainty across the competing candidate models. A fully Bayesian solution integrating all models is idealised but impractical, so a pragmatic approach is used — a deliberate compromise among computational demand, complexity, and statistical rigour. <a href="#fig-workflow" class="quarto-xref">Figure&nbsp;4</a> summarises the end-to-end procedure.</p>
+<div id="fig-workflow" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/SAC-11-workflow.svg" class="img-fluid figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: The pragmatic multi-model risk-analysis workflow adapted from the IATTC SAC-11 framework, from probabilistic problem framing through hypothesis definition, model weighting, distribution combination, and management presentation.
+</figcaption>
+</figure>
+</div>
+<p>The procedure has five main steps.</p>
+<p><strong>Step 1 —</strong> A hierarchy of hypotheses and models. Candidate hypotheses about the state of nature are represented by stock-assessment models arranged in a three-level tree: <em>Level 1</em> overarching hypotheses (weighted by expert opinion only), <em>Level 2</em> data-distinguishable hypotheses, and <em>Level 3</em> sub-hypotheses evaluated so as to limit the influence of data. For jumbo squid the natural Level-1 hypotheses concern the interpretation of the 2024 decline (environmental availability vs.&nbsp;genuine depletion) and stock structure (single stock vs.&nbsp;the three phenotypes); Level-2 hypotheses map directly onto the three assessment architectures and their environmental treatments.</p>
+<p><strong>Step 2 —</strong> A weighting system. Each model’s weight is the product of several metrics, drawn from four discrete categories (None = 0, Low = 0.25, Medium = 0.5, High = 1.0) to contain subjectivity:</p>
+<p><span class="math display">\[
+\begin{aligned}
+W(\text{model}) &amp;= \prod_{k \in \mathcal{M}} W_k, \\
+\mathcal{M} &amp;= \{\text{Expert},\ \text{Convergence},\ \text{Fit},\ \text{Plaus. params},\ \text{Plaus. results},\ \text{Diagnostics}\}
+\end{aligned}
+\]</span></p>
+<p>Model fit (a liberal, AIC-based criterion) is only <em>one</em> metric among many; convergence failure (e.g.&nbsp;a non-positive-definite Hessian) zeroes the product and eliminates the model. The diagnostics term is itself a sum of sub-weights (retrospective behaviour, index and process residuals, production-function diagnostics) so that no single diagnostic dominates. Weights are then rescaled to sum to one conditionally along the branches of the tree, turning the flow chart into a probability tree so that a hypothesis does not gain weight merely by being represented by more models.</p>
+<p><strong>Step 3 —</strong> Per-model distributions. For each retained model, the probability distribution of the quantity of interest (a ratio) is approximated from the estimated standard error (frequentist/normal approximations standing in for a full per-model posterior) and rescaled to a proper density, <span class="math inline">\(P(\text{Quantity} \mid \text{Model} = m)\)</span>.</p>
+<p><strong>Step 4 —</strong> Combine across models (model averaging). The per-model densities are combined by weighted model averaging <span class="citation" data-cites="hoeting1999bma buckland1997model">(<a href="#ref-buckland1997model" role="doc-biblioref">Buckland et al., 1997</a>; <a href="#ref-hoeting1999bma" role="doc-biblioref">Hoeting et al., 1999</a>)</span>:</p>
+<p><span class="math display">\[P(\text{Quantity}) = \sum_{m}\, P(\text{Quantity} \mid \text{Model} = m)\, P(\text{Model} = m)\]</span></p>
+<p>evaluated over a grid fine and wide enough to resolve the tails — which matter because harvest control rules turn on tail probabilities such as <span class="math inline">\(P(F &gt; F_{LIMIT})\)</span>. The cumulative distribution is then used to read off reference-point exceedance probabilities.</p>
+<p><strong>Step 5 —</strong> Present the risk analysis. Results are presented as probability densities and CDFs of the ratios, Kobe phase plots placing each model and the combined result relative to reference points, and decision tables giving the exceedance probability for each candidate management action (e.g.&nbsp;alternative TACs or season closures) under each state of nature, with a weighted-average column. Sensitivity of the advice to the (subjective) weights is reported explicitly.</p>
+<p>What makes this framework more viable for jumbo squid than a generic ensemble or model-averaging exercise <span class="citation" data-cites="punt2016mse deroba2013performance">(<a href="#ref-deroba2013performance" role="doc-biblioref">Deroba &amp; Schueller, 2013</a>; <a href="#ref-punt2016mse" role="doc-biblioref">Punt et al., 2016</a>)</span> is that it ties three concrete, actionable components together: identifying alternative hypotheses about population dynamics, weighting them by model reliability and expert judgement, and combining the resulting distributions into probability statements that can directly inform harvest control rules or other management decisions. It also inherits the tuna framework’s honest limitations: pervasive subjectivity in hypothesis choice and weighting (contained, not eliminated, by discrete categories and sensitivity analysis); an internal tension between treating parameter uncertainty with standard machinery while handling structural uncertainty by judgement; and the risk of bimodality when the data cannot distinguish an optimistic from a pessimistic cluster of models — a real possibility here, given how sharply the three current verdicts diverge <span class="citation" data-cites="runge2011uncertainty">(<a href="#ref-runge2011uncertainty" role="doc-biblioref">Runge et al., 2011</a>)</span>.</p>
+</section>
+<section id="sec-discussion" class="level1">
+<h1>Discussion: management implications</h1>
+<p>Two management messages follow. First, effort- and capacity-based controls are insufficient on their own. Jigging efficiency responds strongly to upwelling, SST, and ENSO phase <span class="citation" data-cites="Yu2018 Fang2023 Weiguo2012ComparisonOF">(<a href="#ref-Fang2023" role="doc-biblioref">Fang et al., 2023</a>; <a href="#ref-Weiguo2012ComparisonOF" role="doc-biblioref">Wei-guo, 2012</a>; <a href="#ref-Yu2018" role="doc-biblioref">Yu &amp; Chen, 2018</a>)</span>, so a fixed cap on vessels or tonnage does not fix fishing pressure; realised mortality can rise under favourable environmental conditions even as the fleet stays within its cap. This argues for complementing capacity limits with catch-based measures and for environment-aware reference points that acknowledge productivity is not stationary.</p>
+<p>Second, because MSY and B<sub>MSY</sub> are unreliable under strong environment-driven fluctuations — a point on which the CALAMASUR assessment is explicit, and which the divergence among the three models illustrates — management advice should be framed probabilistically rather than around a single point estimate or a single “best” model. The risk-analysis framework does exactly this: it turns three irreconcilable headline verdicts into a weighted probability statement about reference-point exceedance, which can seed a harvest control rule and, ultimately, Management Strategy Evaluation <span class="citation" data-cites="punt2016mse">(<a href="#ref-punt2016mse" role="doc-biblioref">Punt et al., 2016</a>)</span>. Natural mortality, estimated internally at ≈2.0/yr, and its plausible spatial variation across Peru, Chile, and the high seas <span class="citation" data-cites="stock2021natural">(<a href="#ref-stock2021natural" role="doc-biblioref">Stock et al., 2021</a>)</span> are among the parameters whose uncertainty most deserves to be carried explicitly.</p>
+</section>
+<section id="sec-conclusions" class="level1">
+<h1>Way forward and conclusions</h1>
+<p>Priorities for improving the assessment and the risk analysis are: (i) extending the depletion model to four fleets and three natural-mortality zones (Peru, Chile, high seas); (ii) moving the surplus-production stage to a continuous, monthly ONI-driven time step; (iii) improving and standardizing the CPUE abundance indices to incorporate spatiotemporal structure and the different squid sizes across regions; and (iv) accounting for the three <em>D. gigas</em> phenotypes, which likely differ in growth and carrying capacity <span class="citation" data-cites="Ibez2016 Park2015">(<a href="#ref-Ibez2016" role="doc-biblioref">Ibáñez et al., 2016</a>; <a href="#ref-Park2015" role="doc-biblioref">Park et al., 2015</a>)</span>. The weighted model set assembled for the risk analysis can be reused directly as the operating models for a future MSE.</p>
+<p>In summary, the three 2025 SPRFMO assessments of jumbo flying squid disagree not because of the data but because of how each model is built and how each treats the 2024 catch decline and environmental variability. A probabilistic, reference-point based risk-analysis framework — carrying the competing models as weighted hypotheses rather than selecting one — offers a defensible, management-ready way to reconcile them, and directly supports the shift toward catch-based, environment-aware management measures for this exceptionally variable fishery.</p>
+</section>
+<section id="references" class="level1 unnumbered">
+<h1 class="unnumbered">References</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-airesdasilva2020riskanalysis" class="csl-entry" role="listitem">
+Aires-da-Silva, A., Maunder, M. N., Xu, H., Minte-Vera, C., Valero, J. L., &amp; Lennert-Cody, C. E. (2020). <em>Risk analysis for management of the tropical tuna fishery in the eastern pacific ocean, 2020</em> (Scientific Advisory Committee Document SAC-11-08 REV). Inter-American Tropical Tuna Commission (<span>IATTC</span>).
+</div>
+<div id="ref-buckland1997model" class="csl-entry" role="listitem">
+Buckland, S. T., Burnham, K. P., &amp; Augustin, N. H. (1997). Model selection: An integral part of inference. <em>Biometrics</em>, <em>53</em>(2), 603–618.
+</div>
+<div id="ref-deroba2013performance" class="csl-entry" role="listitem">
+Deroba, J. J., &amp; Schueller, A. M. (2013). Performance of stock assessments with misspecified age- and time-varying natural mortality. <em>Fisheries Research</em>, <em>146</em>, 27–40.
+</div>
+<div id="ref-Fang2023" class="csl-entry" role="listitem">
+Fang, X., Zhang, Y., Yu, W., &amp; Chen, X. (2023). Geographical distribution variations of humboldt squid habitat in the eastern pacific ocean. <em>Ecosystem Health and Sustainability</em>, <em>9</em>. <a href="https://doi.org/10.34133/ehs.0010">https://doi.org/10.34133/ehs.0010</a>
+</div>
+<div id="ref-FAO1995" class="csl-entry" role="listitem">
+FAO. (1995). <em>Precautionary approach to fisheries. <span>Part 1</span>: Guidelines on the precautionary approach to capture fisheries and species introduction</em> (FAO Fisheries Technical Paper 350/1). Food; Agriculture Organization of the United Nations.
+</div>
+<div id="ref-Gilly2006" class="csl-entry" role="listitem">
+Gilly, W., Markaida, U., Baxter, C., Block, B., Boustany, A., Zeidberg, L., Reisenbichler, K., Robison, B., Bazzino, G., &amp; Salinas, C. (2006). Vertical and horizontal migrations by the jumbo squid dosidicus gigas revealed by electronic tagging. <em>Marine Ecology Progress Series</em>, <em>324</em>, 1–17. <a href="https://doi.org/10.3354/meps324001">https://doi.org/10.3354/meps324001</a>
+</div>
+<div id="ref-hoeting1999bma" class="csl-entry" role="listitem">
+Hoeting, J. A., Madigan, D., Raftery, A. E., &amp; Volinsky, C. T. (1999). Bayesian model averaging: A tutorial. <em>Statistical Science</em>, <em>14</em>(4), 382–401.
+</div>
+<div id="ref-Ibez2016" class="csl-entry" role="listitem">
+Ibáñez, C. M., Sepúlveda, R. D., Ulloa, P., Keyl, F., &amp; Pardo-Gandarillas, M. C. (2016). The biology and ecology of the jumbo squid dosidicus gigas (cephalopoda) in chilean waters: A review. <em>Latin American Journal of Aquatic Research</em>, <em>43</em>(3), 402–414. <a href="https://doi.org/10.3856/vol43-issue3-fulltext-2">https://doi.org/10.3856/vol43-issue3-fulltext-2</a>
+</div>
+<div id="ref-li2025china" class="csl-entry" role="listitem">
+Li, G., &amp; Chen, X. (2025). <em>Assessment of jumbo squid in <span>Southeast Pacific Ocean</span> based on state-space biomass dynamics model and impacts of <span>ENSO</span></em> (Scientific Committee Document Nos. SC13-SQ07). National Data Centre for Distant-water Fisheries of China, Shanghai Ocean University.
+</div>
+<div id="ref-maunder2020riskframework" class="csl-entry" role="listitem">
+Maunder, M. N., Xu, H., Lennert-Cody, C. E., Valero, J. L., Aires-da-Silva, A., &amp; Minte-Vera, C. V. (2020). <em>Implementing reference point-based fishery harvest control rules within a probabilistic framework that considers multiple hypotheses</em> (Scientific Advisory Committee Document SAC-11 INF-F). Inter-American Tropical Tuna Commission (<span>IATTC</span>).
+</div>
+<div id="ref-Park2015" class="csl-entry" role="listitem">
+Park, J.-A., Gardner, C., Jang, Y.-S., Chang, M.-I., Seo, Y.-I., &amp; Kim, D.-H. (2015). The economic feasibility of light-emitting diode (LED) lights for the korean offshore squid-jigging fishery. <em>Ocean &amp;Amp; Coastal Management</em>, <em>116</em>, 311–317. <a href="https://doi.org/10.1016/j.ocecoaman.2015.08.012">https://doi.org/10.1016/j.ocecoaman.2015.08.012</a>
+</div>
+<div id="ref-paya2025spict" class="csl-entry" role="listitem">
+Payá, I. S. (2025). <em>Update of the stochastic production model in continuous time (<span>SPiCT</span>) applied to <span class="nocase">Dosidicus gigas</span> in the <span>FAO</span> area 87</em> (Scientific Committee Document Nos. SC13-SQ06). Instituto de Fomento Pesquero (<span>IFOP</span>), Stock Assessment Department.
+</div>
+<div id="ref-punt2016mse" class="csl-entry" role="listitem">
+Punt, A. E., Butterworth, D. S., Moor, C. L. de, De Oliveira, J. A. A., &amp; Haddon, M. (2016). Management strategy evaluation: Best practices. <em>Fish and Fisheries</em>, <em>17</em>(2), 303–334.
+</div>
+<div id="ref-roaureta2025calamasur" class="csl-entry" role="listitem">
+Roa-Ureta, R. H., &amp; Wiff, R. (2025). <em>Stock assessment of the jumbo squid (<span class="nocase">Dosidicus gigas</span>) in the eastern pacific with multi-annual multi-fleet generalized depletion models combined with environmental surplus production models (1990–2024)</em> (Scientific Committee Document Nos. SC13-Obs03). South Pacific Regional Fisheries Management Organisation (<span>SPRFMO</span>).
+</div>
+<div id="ref-Rosa2013DosidicusGH" class="csl-entry" role="listitem">
+Rosa, R., Yamashiro, C., Markaida, U., Rodhouse, P. G. K., Waluda, C. M., Salinas-Zavala, C. A., Keyl, F., O’dor, R. K., Stewart, J. S., &amp; Gilly, W. F. (2013). <em>Dosidicus gigas, humboldt squid</em>. <a href="https://api.semanticscholar.org/CorpusID:82682805">https://api.semanticscholar.org/CorpusID:82682805</a>
+</div>
+<div id="ref-runge2011uncertainty" class="csl-entry" role="listitem">
+Runge, M. C., Converse, S. J., &amp; Lyons, J. E. (2011). Which uncertainty? <span>Using</span> expert elicitation and expected value of information to design an adaptive program. <em>Biological Conservation</em>, <em>144</em>(4), 1214–1223.
+</div>
+<div id="ref-stock2021natural" class="csl-entry" role="listitem">
+Stock, B. C., Johnson, K. F., Anderson, S. C., Hendricks, A. B., Hurtado-Ferro, F., Licandeo, R. R., Rudd, M. B., Skaug, H. J., Taylor, I. G., &amp; Punt, A. E. (2021). Time-varying natural mortality: A review of methods, implications, and evaluation of performance for practical stock assessment. <em>ICES Journal of Marine Science</em>, <em>78</em>(3), 911–925.
+</div>
+<div id="ref-Weiguo2012ComparisonOF" class="csl-entry" role="listitem">
+Wei-guo, Q. (2012). <em>Comparison of fishery biology for dosidicus gigas from three different areas in the eastern pacific ocean</em>. <a href="https://api.semanticscholar.org/CorpusID:130857211">https://api.semanticscholar.org/CorpusID:130857211</a>
+</div>
+<div id="ref-Yu2018" class="csl-entry" role="listitem">
+Yu, W., &amp; Chen, X. (2018). Ocean warming-induced range-shifting of potential habitat for jumbo flying squid dosidicus gigas in the southeast pacific ocean off peru. <em>Fisheries Research</em>, <em>204</em>, 137–146. <a href="https://doi.org/10.1016/j.fishres.2018.02.016">https://doi.org/10.1016/j.fishres.2018.02.016</a>
+</div>
+<div id="ref-Yu2019" class="csl-entry" role="listitem">
+Yu, W., Chen, X., &amp; Zhang, Y. (2019). Seasonal habitat patterns of jumbo flying squid dosidicus gigas off peruvian waters. <em>Journal of Marine Systems</em>, <em>194</em>, 41–51. <a href="https://doi.org/10.1016/j.jmarsys.2019.02.011">https://doi.org/10.1016/j.jmarsys.2019.02.011</a>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script>
+// Mermaid paints subgraph (cluster) titles *below* the connector edges, so the
+// arrows strike through the title text. Move each cluster title to the end of
+// the diagram's root group so it repaints above the edges; combined with the
+// panel-coloured background in styles.css, arrows then read as passing behind
+// the title. Cluster-label transforms are absolute (ancestors carry no
+// transform), so re-parenting to g.root preserves position.
+(function () {
+  function maskClusterTitles() {
+    document.querySelectorAll("svg.flowchart g.root").forEach(function (root) {
+      // Once moved out of g.clusters the labels no longer match this selector,
+      // so the operation is idempotent and cannot loop with the observer below.
+      root.querySelectorAll("g.clusters .cluster-label").forEach(function (label) {
+        root.appendChild(label);
+      });
+    });
+  }
+
+  if (document.readyState !== "loading") maskClusterTitles();
+  document.addEventListener("DOMContentLoaded", maskClusterTitles);
+  window.addEventListener("load", maskClusterTitles);
+
+  // Mermaid renders asynchronously; watch until the diagram appears, then stop.
+  var observer = new MutationObserver(maskClusterTitles);
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+  setTimeout(function () { observer.disconnect(); }, 8000);
+})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/jcquiroz\.github\.io\/jumbo-flying-squid\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Un proyecto financiado por <a href="https://www.calamasur.com" target="_blank">CALAMASUR</a></p>
+</div>   
+    <div class="nav-footer-center">
+<p>Juan-Carlos Quiroz</p>
+</div>
+    <div class="nav-footer-right">
+<p>Apoyado por <a href="https://www.facilevisual.com" target="_blank">Facile Visual</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
