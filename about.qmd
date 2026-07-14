@@ -1,5 +1,142 @@
 ---
 title: "About"
+subtitle: "Building an evidence-based scientific position on precautionary management of jumbo flying squid (*Dosidicus gigas*) within SPRFMO."
+format: html
 ---
 
-About this site
+## Context
+
+Over the past three years, **CALAMASUR** has built a consolidated scientific
+position in favour of precautionary management of the jumbo flying squid
+fishery under the **South Pacific Regional Fisheries Management Organisation
+(SPRFMO)**.
+
+Recent discussions within the SPRFMO Scientific Committee aimed at reducing
+fishing effort on jumbo squid have produced measures that do not explicitly
+guarantee a reduction in fishing pressure on the species. The work described on
+this site exists to reopen that discussion on evidence-based terms, and to
+continue CALAMASUR's scientific contribution to the elements that underpin
+management decisions for this fishery.
+
+## Where the science stands
+
+CALAMASUR presented an improved assessment of jumbo squid to the SPRFMO
+Scientific Committee in 2025 (**SC13-Obs03**), covering a range of exploitation
+scenarios in response to technical observations raised by Committee members.
+
+::: {.highlight}
+The results showed that, although the population trend is **not necessarily
+declining**, jumbo squid is subject to a **high exploitation rate**.
+:::
+
+Because these results do not coincide with the assessments presented by
+[Chile](docs/SC13-SQ06-CHL-SPiCT-summary.qmd) and
+[China](docs/SC13-SQ07-CHN-state-space-summary.qmd), it has proved difficult to
+agree a consensus exploitation status supported by model results — the problem
+examined in detail in the [working paper](docs/modelos.qmd) and the
+[SCW18 presentation](slides.qmd).
+
+Refining the CALAMASUR model further — distributing effort across fleets,
+discriminating differences in population parameters such as natural mortality —
+remains necessary. But even a model that answers most of the Committee's
+questions would not, on its own, resolve the deeper need: **identifying and
+adopting a base model** against which exploitation status is determined.
+
+## Three lines of action
+
+Given the complexity of the decision process and the technical disagreements
+between the squid models, three **non-exclusive** lines of action are proposed.
+Each aims to give Scientific Committee members information that complements —
+rather than replaces — the population models currently in play.
+
+::: {.model-cards}
+
+<a class="model-card" href="docs/modelos.qmd">
+<span class="model-card-tag">Line 1 · Under way</span>
+<span class="model-card-title">Multi-model risk analysis</span>
+<span class="model-card-desc">Weights population projections from a set of models (CALAMASUR, Chile, China) under differing assumptions about fishing effort. Its defining feature is the capacity to incorporate the views of a broad group of stakeholders, and to weight the credibility of each projection on data, empirical evidence and expert judgement.</span>
+</a>
+
+<a class="model-card" href="slides.qmd">
+<span class="model-card-tag">Line 2 · Proposed</span>
+<span class="model-card-title">Empirical Management Strategy Evaluation</span>
+<span class="model-card-desc">Applies the technical and methodological basis of a standard MSE to test, by simulation, how different models respond to alternative harvest control rules. Models that lack robustness show little sensitivity across control rules — and can therefore be set aside.</span>
+</a>
+
+<a class="model-card" href="docs/SC13-Obs03-CALAMASUR-summary.qmd">
+<span class="model-card-tag">Line 3 · Committed</span>
+<span class="model-card-title">Improving the CALAMASUR model</span>
+<span class="model-card-desc">Delivers the commitments made in SC13-Obs03: widening the fishing units (fleets) represented, and capturing differences in natural mortality between zones.</span>
+</a>
+
+:::
+
+### How the three fit together
+
+The three lines answer different questions, and are deliberately not
+alternatives to one another:
+
+| | Question it answers | Relationship to the models |
+|---|---|---|
+| **Multi-model risk analysis** | *Given that the models disagree, what can we still say with confidence?* | Carries all three models as weighted hypotheses |
+| **Empirical MSE** | *Which models are robust enough to inform a decision?* | Tests the models against harvest control rules |
+| **Model improvement** | *Can the remaining objections to CALAMASUR's model be closed out?* | Improves one model |
+
+: {tbl-colwidths="[24,40,36]"}
+
+Line 1 is the most developed: it is set out in full in the
+[working paper](docs/modelos.qmd), which defines risk following FAO guidance as
+"the probability of something undesirable happening", and shows how competing
+hypotheses are hierarchized, weighted, and combined into probability statements
+that can seed a harvest control rule.
+
+## Implementation {#implementation}
+
+The immediate objective is to develop **at least one** of these lines far
+enough to present an implementation scheme — structured along the lines of
+terms of reference — to the **14th Meeting of the SPRFMO Scientific Committee
+(SC14, September 2026)**.
+
+The lines differ in complexity and in the level of technical dedication they
+demand. For SC14 the realistic aim is therefore to set out the basis for
+implementation schematically, rather than to deliver all three in full.
+
+The work is organised around three steps:
+
+::: {.model-cards}
+
+<span class="model-card">
+<span class="model-card-tag">Step 1 · Before the meeting</span>
+<span class="model-card-title">Technical document</span>
+<span class="model-card-desc">Preparation of the technical document, together with the supporting material used to present it — agreed with the counterpart before submission.</span>
+</span>
+
+<span class="model-card">
+<span class="model-card-tag">Step 2 · During</span>
+<span class="model-card-title">Representation at SC14</span>
+<span class="model-card-desc">Scientific representation of CALAMASUR through the meeting of the SPRFMO Scientific Committee, September 2026.</span>
+</span>
+
+<span class="model-card">
+<span class="model-card-tag">Step 3 · After</span>
+<span class="model-card-title">Post-meeting review</span>
+<span class="model-card-desc">A retrospective assessment of how the position was received, used to identify and scope the next round of technical actions.</span>
+</span>
+
+:::
+
+A detailed explanation of the methodological schemes behind each line of action
+can be provided and discussed on request.
+
+## Who
+
+This work is carried out by **Juan-Carlos Quiroz**
+([ORCID](https://orcid.org/0000-0002-2831-7689){target="_blank"}) with
+**Renato Gozzer**
+([ORCID](https://orcid.org/0000-0002-1156-4552){target="_blank"}), and is funded
+by [CALAMASUR](https://www.calamasur.com){target="_blank"} with support from
+[Facile Visual](https://www.facilevisual.com){target="_blank"} and the
+Innovations for Ocean Action Foundation.
+
+The working paper is archived and citable at
+[10.5281/zenodo.21361536](https://doi.org/10.5281/zenodo.21361536){target="_blank"}.
