@@ -68,7 +68,7 @@ bibliography: bibliography.bib
 #   1. `csl: apa.csl` below       (the manuscript project supplies this via its
 #                                  own _quarto.yml, which does not apply here)
 #   2. `execute: freeze: true`    (CI installs no R; the ENSO chunk must not run)
-#   3. `format-links` below       (points at the pre-built Typst PDF)
+#   3. `other-links` below        (points at the pre-built Typst PDF)
 #   4. these comments
 #   5. the "Cite this work" callout in the body
 # Then re-render locally with R so _freeze/docs/modelos/ refreshes, and commit
