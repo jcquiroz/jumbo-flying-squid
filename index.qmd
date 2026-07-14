@@ -12,10 +12,11 @@ meta-affiliation: "CALAMASUR"
 ::: {.hero-content}
 <div class="hero-title">Jumbo Squid</div>
 
-Exploring the biology, behavior, and mystery of the Humboldt squid.
+Why three stock assessments of the same squid disagree — and how probabilistic
+risk analysis can reconcile them.
 
 [Explore](about.qmd){.btn .hero-btn role="button"}
-[Learn more](notes.qmd){.btn .hero-btn-outline role="button"}
+[Learn more](models.qmd){.btn .hero-btn-outline role="button"}
 :::
 :::
 
@@ -42,11 +43,59 @@ Exploring the biology, behavior, and mystery of the Humboldt squid.
 :::
 
 
-A risk-assessment framework is presented to identify sustainable management actions for the jumbo flying squid (*Dosidicus gigas*) in the South-Eastern Pacific Ocean. It applies reference-point-based management quantities inside a probabilistic setup that accommodates multiple, competing hypotheses drawn from the current stock-assessment models developed under the umbrella of the South Pacific Regional Fisheries Management Organisation (SPRFMO). By explicitly quantifying uncertainty instead of relying on point estimates from a single “best” assessment model, the framework reconciles the tension between competing candidate models used for inference and decision-making. The main definition under this framework is grounded in the FAO Guidelines [@FAO1995] where risk is defined as "the probability of something undesirable happening" — in this case, exceeding the reference points that trigger management action.
 
-Three SPRFMO parties have presented stock assessment methodologies for jumbo flying squid for discussion by the 2025 SPRFMO Scientific Committee. The CALAMASUR approach is the most mechanistic, operating at monthly time steps and explicitly modeling fleet-specific recruitment dynamics and fishing operations before scaling up to a production model [@roaureta2025calamasur]. The Chilean SPiCT model is more data-modest, relying on annual CPUE indices without requiring fishing effort at fine temporal resolution, and uses frequentist maximum likelihood [@paya2025spict]. The Chinese model is fully Bayesian, with the additional step of formally standardising CPUE via GAM before incorporating it into the state-space model, and uniquely focuses on MCMC-based posterior inference [@li2025china].
+## Context
 
-The proposed risk-assessment framework is a compromise among model complexity and statistical rigour, weighting models according to the information contained in the data, population and fishery process, and expert judgement, while acknowledging that the complexity of jumbo flying squid stock assessments can preclude strict adherence to ideal statistical criteria for management decision-making. In fact, the CALAMASUR model indicates the stock is not overfished but may be experiencing overfishing; the Chilean SPiCT model offers a more pessimistic and uncertain assessment; by contrast, the Chinese Bayesian state-space model is the most optimistic, finding the stock has remained sustainable since 2013 with no evidence of overfishing or being overfished. The three assessments arrive at markedly different conclusions despite using overlapping data from the same fishery; these differences reflect their methodological approaches and make it difficult to take discrete management decisions such as setting a TAC, opening or closing a season, or allocating effort across fleets.
+Over the past three years, **CALAMASUR** has built a consolidated scientific
+position in favour of precautionary management of the jumbo flying squid
+fishery under the **South Pacific Regional Fisheries Management Organisation
+(SPRFMO)**.
 
-To address these challenges, the risk‑assessment framework yields probabilistic statements about whether feasible reference points — such as targets and limits used in harvest control rules — have been, or are likely to be, exceeded under current or alternative management actions. Those probabilities are derived through a hierarchical evaluation of competing hypotheses, including alternative stock‑assessment models, multiple metrics of model reliability and performance, and the exclusion of implausible scenarios. What makes this framework particularly viable in jumbo squid over a more generic one, such as ensemble modelling and model averaging [@punt2016mse; @buckland1997model], is that it ties three concrete, actionable components together: identifying alternative hypotheses about population dynamics, weighting those hypotheses based on model reliability and expert judgment, and combining the resulting distributions into probability statements that can directly inform harvest control rules or other management decisions. 
+Recent discussions within the SPRFMO Scientific Committee aimed at reducing
+fishing effort on jumbo squid have produced measures that do not explicitly
+guarantee a reduction in fishing pressure on the species. The work described on
+this site exists to reopen that discussion on evidence-based terms, and to
+continue CALAMASUR's scientific contribution to the elements that underpin
+management decisions for this fishery.
+
+## Where the science stands
+
+CALAMASUR presented an improved assessment of jumbo squid to the SPRFMO
+Scientific Committee in 2025 (**SC13-Obs03**), covering a range of exploitation
+scenarios in response to technical observations raised by Committee members.
+
+::: {.highlight}
+The results showed that, although the population trend is **not necessarily
+declining**, jumbo squid is subject to a **high exploitation rate**.
+:::
+
+Because these results do not coincide with the assessments presented by
+[Chile](docs/SC13-SQ06-CHL-SPiCT-summary.qmd) and
+[China](docs/SC13-SQ07-CHN-state-space-summary.qmd), it has proved difficult to
+agree a consensus exploitation status supported by model results.
+
+Refining the CALAMASUR model further — distributing effort across fleets,
+discriminating differences in population parameters such as natural mortality —
+remains necessary. But even a model that answers most of the Committee's
+questions would not, on its own, resolve the deeper need: **identifying and adopting a base model** against which exploitation status is determined.
+
+CALAMASUR plans to address this problem through three long-term lines of action ([see About+](about.qmd)), each designed to provide Scientific Committee members with information that complements — rather than replaces — the population models currently in use. This website tracks progress on the first of these lines, **Multi-model risk analysis**, whose initial outcomes are presented in the [working paper](docs/modelos.qmd) and the [SCW18 presentation](slides.qmd).
+
+
+## Summary
+
+<!-- Included by reference from abstract.md rather than copied, so this page and
+     the working paper cannot drift apart. Edit abstract.md, not this block. -->
+
+{{< include abstract.md >}}
+
+::: {.small-note}
+This summary condenses the working paper, *[Reconciling competing stock
+assessments for jumbo flying squid through probabilistic risk
+analysis](docs/modelos.qmd)*, archived at
+[10.5281/zenodo.21361536](https://doi.org/10.5281/zenodo.21361536){target="_blank"}.
+:::
+
+## References
+
 
