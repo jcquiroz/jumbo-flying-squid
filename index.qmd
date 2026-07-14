@@ -34,6 +34,11 @@ Exploring the biology, behavior, and mystery of the Humboldt squid.
 [Date]{.meta-label}
 {{< meta meta-date >}}
 :::
+
+::: {.meta-item}
+[DOI]{.meta-label}
+[10.5281/zenodo.21361536](https://doi.org/10.5281/zenodo.21361536)
+:::
 :::
 
 

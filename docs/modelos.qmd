@@ -62,8 +62,16 @@ abstract: |
   into probability statements that can directly inform harvest control rules.
 keywords: [Dosidicus gigas, SPRFMO, surplus production, depletion model, ENSO, risk analysis, reference points, model averaging]
 bibliography: bibliography.bib
-# apa.csl travels with this copy: the manuscript project supplied it via its own
-# _quarto.yml, which does not apply here.
+# MAINTAINER NOTE — this page mirrors the working paper kept in the
+# `manuscript-modelos` project. To refresh it: copy modelos.qmd over this file,
+# then re-apply the site-only additions a plain copy would destroy:
+#   1. `csl: apa.csl` below       (the manuscript project supplies this via its
+#                                  own _quarto.yml, which does not apply here)
+#   2. `execute: freeze: true`    (CI installs no R; the ENSO chunk must not run)
+#   3. these comments
+#   4. the "Cite this work" callout in the body
+# Then re-render locally with R so _freeze/docs/modelos/ refreshes, and commit
+# _freeze along with the page.
 csl: apa.csl
 # The ENSO figure is an R chunk and CI has no R. Frozen results are committed
 # under _freeze/, so the site renders this page without executing anything.
@@ -73,8 +81,15 @@ execute:
 ---
 
 ::: {.callout-note appearance="simple"}
-This page mirrors the working paper maintained in the `manuscript-modelos`
-project. Edit it there, then re-render to refresh the copy published here.
+## Cite this work
+
+Quiroz, J.-C., & Gozzer, R. (2026). *Reconciling competing stock assessments for
+jumbo flying squid through probabilistic risk analysis*. Zenodo.
+<https://doi.org/10.5281/zenodo.21361536>
+
+The DOI above is the **concept DOI**: it always resolves to the most recent
+version. To pin this exact deposit instead, cite
+[10.5281/zenodo.21361537](https://doi.org/10.5281/zenodo.21361537).
 :::
 
 # Introduction {#sec-intro}

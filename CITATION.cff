@@ -10,6 +10,16 @@ abstract: >-
   harvest control rules.
 type: software
 license: CC-BY-4.0
+# Concept DOI: always resolves to the newest version on Zenodo.
+doi: 10.5281/zenodo.21361536
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21361536
+    description: Concept DOI — always resolves to the latest version
+  - type: doi
+    value: 10.5281/zenodo.21361537
+    description: Version DOI — the deposit of 14 July 2026
+date-released: "2026-07-14"
 authors:
   - family-names: Quiroz
     given-names: Juan-Carlos
@@ -34,3 +44,22 @@ keywords:
   - reference points
   - model averaging
   - stock assessment
+# CFF's top-level `type` only allows software/dataset, so citation tools would
+# otherwise cite this as software. This tells them to cite the working paper.
+preferred-citation:
+  type: report
+  title: "Reconciling competing stock assessments for jumbo flying squid through probabilistic risk analysis"
+  doi: 10.5281/zenodo.21361536
+  year: 2026
+  month: 7
+  institution:
+    name: Zenodo
+  authors:
+    - family-names: Quiroz
+      given-names: Juan-Carlos
+      orcid: "https://orcid.org/0000-0002-6092-8551"
+      affiliation: "Facile Visual & CALAMASUR"
+    - family-names: Gozzer
+      given-names: Renato
+      orcid: "https://orcid.org/0000-0002-1156-4552"
+      affiliation: "Innovations for Ocean Action Foundation"
