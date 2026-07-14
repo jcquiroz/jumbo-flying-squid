@@ -4,7 +4,7 @@ subtitle: "A multi-model synthesis for *Dosidicus gigas* in the South-East Pacif
 author:
   - name: Juan-Carlos Quiroz
     corresponding: true
-    orcid: 0000-0002-6092-8551
+    orcid: 0000-0002-2831-7689
     email: jcquiroz@facilevisual.com
     role:
       - Conceptualization
