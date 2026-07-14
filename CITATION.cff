@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Reconciling competing stock assessments for jumbo flying squid through probabilistic risk analysis"
+abstract: >-
+  A risk-assessment framework to identify sustainable management actions for the
+  jumbo flying squid (Dosidicus gigas) in the South-Eastern Pacific Ocean. It
+  carries the three competing SPRFMO stock assessments as weighted hypotheses
+  rather than selecting a single "best" model, and combines them into
+  probability statements about reference-point exceedance that can inform
+  harvest control rules.
+type: software
+license: CC-BY-4.0
+authors:
+  - family-names: Quiroz
+    given-names: Juan-Carlos
+    orcid: "https://orcid.org/0000-0002-6092-8551"
+    email: jcquiroz@facilevisual.com
+    affiliation: "Facile Visual & CALAMASUR"
+  - family-names: Gozzer
+    given-names: Renato
+    orcid: "https://orcid.org/0000-0002-1156-4552"
+    email: renato.gozzer@ocean-action.org
+    affiliation: "Innovations for Ocean Action Foundation"
+repository-code: "https://github.com/jcquiroz/jumbo-flying-squid"
+url: "https://jcquiroz.github.io/jumbo-flying-squid/"
+keywords:
+  - Dosidicus gigas
+  - jumbo flying squid
+  - SPRFMO
+  - surplus production
+  - depletion model
+  - ENSO
+  - risk analysis
+  - reference points
+  - model averaging
+  - stock assessment
