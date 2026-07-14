@@ -9,8 +9,11 @@ project:
     - docs/SC13-Obs03-CALAMASUR-summary.qmd
     - docs/SC13-SQ06-CHL-SPiCT-summary.qmd
     - docs/SC13-SQ07-CHN-state-space-summary.qmd
-    - docs/SAC-11-risk-analysis-methodology.qmd
+    - docs/modelos.qmd
     - "!notes.qmd"
+    # Superseded by docs/modelos.qmd (the full working paper). Kept in the repo
+    # for reference but excluded from the site.
+    - "!docs/SAC-11-risk-analysis-methodology.qmd"
   # The reveal.js deck is committed pre-built (embed-resources makes it a single
   # portable file). It is copied verbatim, not rendered: its sources live outside
   # this repo and rebuilding it needs R + the ICEN data for the live ENSO chunk.
@@ -26,7 +29,7 @@ website:
         text: Home+
       - href: models.qmd
         text: Models+
-      - href: docs/SAC-11-risk-analysis-methodology.qmd
+      - href: docs/modelos.qmd
         text: Risk+
       - href: slides.qmd
         text: Slides+

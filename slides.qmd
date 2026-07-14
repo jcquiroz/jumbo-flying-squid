@@ -14,7 +14,7 @@ reconcile them.
 The deck walks through each assessment in turn — [CALAMASUR](docs/SC13-Obs03-CALAMASUR-summary.qmd),
 [Chile's SPiCT](docs/SC13-SQ06-CHL-SPiCT-summary.qmd) and
 [China's Bayesian state-space model](docs/SC13-SQ07-CHN-state-space-summary.qmd) — before
-turning to the [risk-analysis framework](docs/SAC-11-risk-analysis-methodology.qmd), with
+turning to the [risk-analysis framework](docs/modelos.qmd), with
 particular attention to how competing hypotheses are **hierarchized and weighted**.
 
 [Open the slides](slides/modelos-slides.html){.btn .btn-primary .btn-lg role="button" target="_blank"}

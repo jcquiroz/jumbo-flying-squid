@@ -1,0 +1,114 @@
+<svg viewBox="0 0 880 1167" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ttl desc">
+<title id="ttl">IATTC SAC-11 risk-analysis workflow</title>
+<desc id="desc">A 17-step procedure grouped into six phases: frame the problem, define hypotheses and models, weight the models, build and combine probabilities, decide and present, and feed forward to assessment improvement and MSE.</desc>
+<rect x="0" y="0" width="880" height="1167" fill="#FFFFFF"/>
+<text x="30" y="17" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#534AB7" letter-spacing="1.5">PRAGMATIC RISK-ANALYSIS WORKFLOW</text>
+<rect x="30" y="24" width="820" height="129" rx="14" fill="#FFFFFF" stroke="#CECBF6" stroke-width="1.5"/>
+<path d="M30,38 a14,14 0 0 1 14,-14 h792 a14,14 0 0 1 14,14 v24 h-820 z" fill="#4A3FB0"/>
+<circle cx="54" cy="43.0" r="13" fill="#FFFFFF" fill-opacity="0.18"/>
+<text x="54" y="48.0" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#FFFFFF">A</text>
+<text x="76" y="48.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF" letter-spacing="0.2">Frame the problem</text>
+<rect x="44" y="74" width="792" height="30" rx="8" fill="#EEEDFE" stroke="#CECBF6" stroke-width="1"/>
+<circle cx="64" cy="89.0" r="11" fill="#7F77DD"/>
+<text x="64" y="93.0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">1</text>
+<text x="86" y="93.5" font-family="Helvetica, Arial, sans-serif" font-size="13.5" fill="#26215C">Frame the HCR question probabilistically</text>
+<rect x="44" y="111" width="792" height="30" rx="8" fill="#EEEDFE" stroke="#CECBF6" stroke-width="1"/>
+<circle cx="64" cy="126.0" r="11" fill="#7F77DD"/>
+<text x="64" y="130.0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">2</text>
+<text x="86" y="130.5" font-family="Helvetica, Arial, sans-serif" font-size="13.5" fill="#26215C">Reject the single “best assessment”</text>
+<rect x="30" y="185" width="820" height="166" rx="14" fill="#FFFFFF" stroke="#CECBF6" stroke-width="1.5"/>
+<path d="M30,199 a14,14 0 0 1 14,-14 h792 a14,14 0 0 1 14,14 v24 h-820 z" fill="#4A3FB0"/>
+<circle cx="54" cy="204.0" r="13" fill="#FFFFFF" fill-opacity="0.18"/>
+<text x="54" y="209.0" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#FFFFFF">B</text>
+<text x="76" y="209.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF" letter-spacing="0.2">Define hypotheses &amp; models</text>
+<rect x="44" y="235" width="792" height="30" rx="8" fill="#EEEDFE" stroke="#CECBF6" stroke-width="1"/>
+<circle cx="64" cy="250.0" r="11" fill="#7F77DD"/>
+<text x="64" y="254.0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">3</text>
+<text x="86" y="254.5" font-family="Helvetica, Arial, sans-serif" font-size="13.5" fill="#26215C">Enumerate the states of nature</text>
+<rect x="44" y="272" width="792" height="30" rx="8" fill="#EEEDFE" stroke="#CECBF6" stroke-width="1"/>
+<circle cx="64" cy="287.0" r="11" fill="#7F77DD"/>
+<text x="64" y="291.0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">4</text>
+<text x="86" y="291.5" font-family="Helvetica, Arial, sans-serif" font-size="13.5" fill="#26215C">Build the three-level hypothesis hierarchy</text>
+<rect x="44" y="309" width="792" height="30" rx="8" fill="#EEEDFE" stroke="#CECBF6" stroke-width="1"/>
+<circle cx="64" cy="324.0" r="11" fill="#7F77DD"/>
+<text x="64" y="328.0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">5</text>
+<text x="86" y="328.5" font-family="Helvetica, Arial, sans-serif" font-size="13.5" fill="#26215C">Translate hypotheses into models</text>
+<rect x="30" y="383" width="820" height="240" rx="14" fill="#FFFFFF" stroke="#CECBF6" stroke-width="1.5"/>
+<path d="M30,397 a14,14 0 0 1 14,-14 h792 a14,14 0 0 1 14,14 v24 h-820 z" fill="#4A3FB0"/>
+<circle cx="54" cy="402.0" r="13" fill="#FFFFFF" fill-opacity="0.18"/>
+<text x="54" y="407.0" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#FFFFFF">C</text>
+<text x="76" y="407.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF" letter-spacing="0.2">Weight the models</text>
+<rect x="44" y="433" width="792" height="30" rx="8" fill="#EEEDFE" stroke="#CECBF6" stroke-width="1"/>
+<circle cx="64" cy="448.0" r="11" fill="#7F77DD"/>
+<text x="64" y="452.0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">6</text>
+<text x="86" y="452.5" font-family="Helvetica, Arial, sans-serif" font-size="13.5" fill="#26215C">Set discrete weight categories (0 / .25 / .5 / 1)</text>
+<rect x="44" y="470" width="792" height="30" rx="8" fill="#EEEDFE" stroke="#CECBF6" stroke-width="1"/>
+<circle cx="64" cy="485.0" r="11" fill="#7F77DD"/>
+<text x="64" y="489.0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">7</text>
+<text x="86" y="489.5" font-family="Helvetica, Arial, sans-serif" font-size="13.5" fill="#26215C">Score the six weight metrics</text>
+<rect x="44" y="507" width="792" height="30" rx="8" fill="#EEEDFE" stroke="#CECBF6" stroke-width="1"/>
+<circle cx="64" cy="522.0" r="11" fill="#7F77DD"/>
+<text x="64" y="526.0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">8</text>
+<text x="86" y="526.5" font-family="Helvetica, Arial, sans-serif" font-size="13.5" fill="#26215C">Eliminate implausible models efficiently</text>
+<rect x="44" y="544" width="792" height="30" rx="8" fill="#EEEDFE" stroke="#CECBF6" stroke-width="1"/>
+<circle cx="64" cy="559.0" r="11" fill="#7F77DD"/>
+<text x="64" y="563.0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">9</text>
+<text x="86" y="563.5" font-family="Helvetica, Arial, sans-serif" font-size="13.5" fill="#26215C">Compute each model’s product weight</text>
+<rect x="44" y="581" width="792" height="30" rx="8" fill="#EEEDFE" stroke="#CECBF6" stroke-width="1"/>
+<circle cx="64" cy="596.0" r="11" fill="#7F77DD"/>
+<text x="64" y="600.0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">10</text>
+<text x="86" y="600.5" font-family="Helvetica, Arial, sans-serif" font-size="13.5" fill="#26215C">Rescale conditionally along the tree</text>
+<rect x="30" y="655" width="820" height="166" rx="14" fill="#FFFFFF" stroke="#CECBF6" stroke-width="1.5"/>
+<path d="M30,669 a14,14 0 0 1 14,-14 h792 a14,14 0 0 1 14,14 v24 h-820 z" fill="#4A3FB0"/>
+<circle cx="54" cy="674.0" r="13" fill="#FFFFFF" fill-opacity="0.18"/>
+<text x="54" y="679.0" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#FFFFFF">D</text>
+<text x="76" y="679.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF" letter-spacing="0.2">Build &amp; combine probabilities</text>
+<rect x="44" y="705" width="792" height="30" rx="8" fill="#EEEDFE" stroke="#CECBF6" stroke-width="1"/>
+<circle cx="64" cy="720.0" r="11" fill="#7F77DD"/>
+<text x="64" y="724.0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">11</text>
+<text x="86" y="724.5" font-family="Helvetica, Arial, sans-serif" font-size="13.5" fill="#26215C">Per-model distribution of the ratio</text>
+<rect x="44" y="742" width="792" height="30" rx="8" fill="#EEEDFE" stroke="#CECBF6" stroke-width="1"/>
+<circle cx="64" cy="757.0" r="11" fill="#7F77DD"/>
+<text x="64" y="761.0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">12</text>
+<text x="86" y="761.5" font-family="Helvetica, Arial, sans-serif" font-size="13.5" fill="#26215C">Model-average across models</text>
+<rect x="44" y="779" width="792" height="30" rx="8" fill="#EEEDFE" stroke="#CECBF6" stroke-width="1"/>
+<circle cx="64" cy="794.0" r="11" fill="#7F77DD"/>
+<text x="64" y="798.0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">13</text>
+<text x="86" y="798.5" font-family="Helvetica, Arial, sans-serif" font-size="13.5" fill="#26215C">Form CDFs; read exceedance probability</text>
+<rect x="30" y="853" width="820" height="166" rx="14" fill="#FFFFFF" stroke="#CECBF6" stroke-width="1.5"/>
+<path d="M30,867 a14,14 0 0 1 14,-14 h792 a14,14 0 0 1 14,14 v24 h-820 z" fill="#4A3FB0"/>
+<circle cx="54" cy="872.0" r="13" fill="#FFFFFF" fill-opacity="0.18"/>
+<text x="54" y="877.0" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#FFFFFF">E</text>
+<text x="76" y="877.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF" letter-spacing="0.2">Decide &amp; present</text>
+<rect x="44" y="903" width="792" height="30" rx="8" fill="#EEEDFE" stroke="#CECBF6" stroke-width="1"/>
+<circle cx="64" cy="918.0" r="11" fill="#7F77DD"/>
+<text x="64" y="922.0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">14</text>
+<text x="86" y="922.5" font-family="Helvetica, Arial, sans-serif" font-size="13.5" fill="#26215C">Run the closure decision analysis</text>
+<rect x="44" y="940" width="792" height="30" rx="8" fill="#EEEDFE" stroke="#CECBF6" stroke-width="1"/>
+<circle cx="64" cy="955.0" r="11" fill="#7F77DD"/>
+<text x="64" y="959.0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">15</text>
+<text x="86" y="959.5" font-family="Helvetica, Arial, sans-serif" font-size="13.5" fill="#26215C">Present densities, Kobe plots, tables</text>
+<rect x="44" y="977" width="792" height="30" rx="8" fill="#EEEDFE" stroke="#CECBF6" stroke-width="1"/>
+<circle cx="64" cy="992.0" r="11" fill="#7F77DD"/>
+<text x="64" y="996.0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">16</text>
+<text x="86" y="996.5" font-family="Helvetica, Arial, sans-serif" font-size="13.5" fill="#26215C">Interpret with uncertainty explicit</text>
+<rect x="30" y="1051" width="820" height="92" rx="14" fill="#FFFFFF" stroke="#CECBF6" stroke-width="1.5"/>
+<path d="M30,1065 a14,14 0 0 1 14,-14 h792 a14,14 0 0 1 14,14 v24 h-820 z" fill="#4A3FB0"/>
+<circle cx="54" cy="1070.0" r="13" fill="#FFFFFF" fill-opacity="0.18"/>
+<text x="54" y="1075.0" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#FFFFFF">F</text>
+<text x="76" y="1075.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF" letter-spacing="0.2">Feed forward</text>
+<rect x="44" y="1101" width="792" height="30" rx="8" fill="#EEEDFE" stroke="#CECBF6" stroke-width="1"/>
+<circle cx="64" cy="1116.0" r="11" fill="#7F77DD"/>
+<text x="64" y="1120.0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">17</text>
+<text x="86" y="1120.5" font-family="Helvetica, Arial, sans-serif" font-size="13.5" fill="#26215C">Improve assessments; seed MSE operating models</text>
+<line x1="440.0" y1="157" x2="440.0" y2="178" stroke="#AFA9EC" stroke-width="3"/>
+<path d="M434.0,175 L440.0,181 L446.0,175" fill="none" stroke="#AFA9EC" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="440.0" y1="355" x2="440.0" y2="376" stroke="#AFA9EC" stroke-width="3"/>
+<path d="M434.0,373 L440.0,379 L446.0,373" fill="none" stroke="#AFA9EC" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="440.0" y1="627" x2="440.0" y2="648" stroke="#AFA9EC" stroke-width="3"/>
+<path d="M434.0,645 L440.0,651 L446.0,645" fill="none" stroke="#AFA9EC" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="440.0" y1="825" x2="440.0" y2="846" stroke="#AFA9EC" stroke-width="3"/>
+<path d="M434.0,843 L440.0,849 L446.0,843" fill="none" stroke="#AFA9EC" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="440.0" y1="1023" x2="440.0" y2="1044" stroke="#AFA9EC" stroke-width="3"/>
+<path d="M434.0,1041 L440.0,1047 L446.0,1041" fill="none" stroke="#AFA9EC" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>
