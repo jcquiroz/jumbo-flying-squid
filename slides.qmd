@@ -17,8 +17,8 @@ The deck walks through each assessment in turn — [CALAMASUR](docs/SC13-Obs03-C
 turning to the [risk-analysis framework](docs/modelos.qmd), with
 particular attention to how competing hypotheses are **hierarchized and weighted**.
 
-[Open the slides](slides/modelos-slides.html){.btn .btn-primary .btn-lg role="button" target="_blank"}
-[Download PDF](slides/modelos-slides.pdf){.btn .btn-outline-primary .btn-lg role="button" target="_blank"}
+[Open the slides](slides/modelos-slides.html){.btn .btn-primary role="button" target="_blank"}
+[Download PDF](slides/modelos-slides.pdf){.btn .btn-outline-primary role="button" target="_blank"}
 
 ::: {.callout-note appearance="simple"}
 The slides open in a new tab. Use the **arrow keys** or **space** to advance, `F` for
