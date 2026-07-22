@@ -35,9 +35,14 @@ jobs:
 
       # Renders the project (HTML + PDF) and pushes the output to the gh-pages
       # branch. The action commits a .nojekyll marker automatically.
+      #
+      # `path` is required: this repo tracks two sibling Quarto projects
+      # (web-project and manuscript-modelos), so the repo root is not itself a
+      # project. Only web-project is published to the site.
       - name: Render and publish to gh-pages
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
+          path: web-project
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

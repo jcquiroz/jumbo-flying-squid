@@ -1,12 +1,54 @@
+# ── Allowlist repo ───────────────────────────────────────────────────────────
+# This working folder holds far more than the published projects: raw data
+# archives, legacy analyses, and scratch material — well over 1 GB, including
+# individual files above GitHub's 100 MB hard limit. Tracking is therefore
+# opt-in: everything at the root is ignored, and only the projects listed below
+# are un-ignored. Add a new `!/name/` line to bring another one in.
+#
+# book-project is deliberately NOT tracked — it stays local. So is the
+# top-level slides/ (the deck's authoring source); the site carries its own
+# built copies under web-project/slides/.
+#
+# Note: these rules do not evict files git already tracks. When the repo root
+# moved up, slides/ stayed tracked precisely because the parent holds files
+# matching the old web-project-relative paths — it needed `git rm --cached`.
+/*
+!/.gitignore
+!/.github/
+!/web-project/
+!/manuscript-modelos/
+
+# ── Editor / OS / R session cruft ────────────────────────────────────────────
+.DS_Store
+**/.DS_Store
 .Rproj.user
+**/.Rproj.user/
 .Rhistory
+**/.Rhistory
 .RData
 .Ruserdata
 
-/.quarto/
+# ── Quarto build output ──────────────────────────────────────────────────────
+# `_freeze/` is deliberately NOT ignored: CI installs no R and renders the ENSO
+# chunk from the committed freeze results under web-project/_freeze/.
+**/.quarto/
 **/*.quarto_ipynb
-
-/_site/
+**/_site/
+**/_book/
+**/_manuscript/
 **/*_files/
-.DS_Store
-**/.DS_Store
+
+# Typst intermediate; the PDF beside it is committed on purpose.
+manuscript-modelos/modelos.typ
+
+# The manuscript project's freeze cache is local-only — nothing in CI reads it
+# (only web-project/_freeze/ is needed for the published site).
+manuscript-modelos/_freeze/
+
+# ── Deliberately untracked ───────────────────────────────────────────────────
+# Yellowfin-tuna reference material, unrelated to the jumbo squid work and not
+# rendered by the site. This repo is public, so redistributing a third-party
+# working paper here is a separate decision — kept local until it is made.
+# Remove these two lines to include them.
+web-project/docs/example_yft/
+web-project/docs/wgpaper_iattc/SAC-11-INF-J_Yellowfin-tuna-risk-analysis-models-and-their-weights.pdf

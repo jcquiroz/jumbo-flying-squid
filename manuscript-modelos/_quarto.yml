@@ -1,0 +1,55 @@
+project:
+  type: manuscript
+
+manuscript:
+  article: modelos.qmd
+
+# Citations: author-date (APA) via citeproc
+citeproc: true
+bibliography: bibliography.bib
+csl: apa.csl
+highlight-style: github
+
+format:
+  html: 
+    theme:
+      - journal
+      - support/custom.scss
+    linestretch: 1.5
+    comments:
+      hypothesis: true
+  jats: default
+  typst:
+    lang: en
+    linestretch: 1.75   # loosens abstract/title/TOC; body leading is reset in setup.typ
+    toc: true
+    toc-depth: 4
+    toc-indent: 2.0em
+    section-numbering: 1.1.A
+    papersize: a4
+    keep-typ: true
+    fig-format: png
+    fig-align: center
+    fig-width: 8
+    fig-asp: 0.6
+    fig-dpi: 300
+    margin:
+      left: 2.2cm
+      right: 2.2cm
+      top: 3.0cm
+      bottom: 3.3cm
+    mainfont: "Palatino"
+    font-paths: System/Library/Fonts/Supplemental
+    fontsize: 10.5pt
+    include-in-header:
+      - text: |
+          // Abstract slightly smaller than the body for a cleaner title block
+          #show block.where(inset: 2em): set text(size: 9.8pt)
+    include-before-body: support/setup.typ
+
+execute:
+  freeze: true
+
+editor: visual
+  
+

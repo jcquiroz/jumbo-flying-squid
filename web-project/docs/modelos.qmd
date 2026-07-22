@@ -81,8 +81,13 @@ bibliography: bibliography.bib
 # Two reasons: freeze is stored per-format (only html.json exists, so a pdf
 # format would make CI execute R and fail), and a LaTeX render would look
 # nothing like the Typst PDF archived on Zenodo. Instead docs/modelos.pdf is
-# copied from manuscript-modelos/_manuscript/modelos.pdf — the same file as the
-# deposit — and linked below. Refresh it whenever the paper changes.
+# copied from manuscript-modelos/modelos.pdf — the same file as the deposit —
+# and linked below. Refresh it whenever the paper changes.
+#
+# That committed copy is the canonical one: `quarto render modelos.qmd --to
+# typst` writes to manuscript-modelos/_manuscript/modelos.pdf, which is a
+# gitignored build directory, so the render is copied up to
+# manuscript-modelos/modelos.pdf and that file is what lands here.
 other-links:
   - text: PDF
     href: modelos.pdf
