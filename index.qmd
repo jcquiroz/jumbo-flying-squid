@@ -5,7 +5,7 @@ title-block-style: none
 toc: false
 meta-author: "Juan-Carlos Quiroz"
 meta-date: "2026-07-12"
-meta-affiliation: "CALAMASUR"
+meta-affiliation: "FACILEVISUAL"
 ---
 
 ::: {.hero}
@@ -15,7 +15,7 @@ meta-affiliation: "CALAMASUR"
 Why three stock assessments of the same squid disagree — and how probabilistic
 risk analysis can reconcile them.
 
-[Explore](about.qmd){.btn .hero-btn role="button"}
+[Explore](about_.qmd){.btn .hero-btn role="button"}
 [Learn more](models.qmd){.btn .hero-btn-outline role="button"}
 :::
 :::
@@ -46,7 +46,7 @@ risk analysis can reconcile them.
 
 ## Context
 
-Over the past three years, **CALAMASUR** has built a consolidated scientific
+Over the past three years, the organization **CALAMASUR** has built a consolidated scientific
 position in favour of precautionary management of the jumbo flying squid
 fishery under the **South Pacific Regional Fisheries Management Organisation
 (SPRFMO)**.
@@ -55,12 +55,12 @@ Recent discussions within the SPRFMO Scientific Committee aimed at reducing
 fishing effort on jumbo squid have produced measures that do not explicitly
 guarantee a reduction in fishing pressure on the species. The work described on
 this site exists to reopen that discussion on evidence-based terms, and to
-continue CALAMASUR's scientific contribution to the elements that underpin
+continue its scientific contribution to the elements that underpin
 management decisions for this fishery.
 
 ## Where the science stands
 
-CALAMASUR presented an improved assessment of jumbo squid to the SPRFMO
+The organization presented an improved assessment of jumbo squid to the SPRFMO
 Scientific Committee in 2025 (**SC13-Obs03**), covering a range of exploitation
 scenarios in response to technical observations raised by Committee members.
 
@@ -74,12 +74,12 @@ Because these results do not coincide with the assessments presented by
 [China](docs/SC13-SQ07-CHN-state-space-summary.qmd), it has proved difficult to
 agree a consensus exploitation status supported by model results.
 
-Refining the CALAMASUR model further — distributing effort across fleets,
+Refining that assessment further — distributing effort across fleets,
 discriminating differences in population parameters such as natural mortality —
 remains necessary. But even a model that answers most of the Committee's
 questions would not, on its own, resolve the deeper need: **identifying and adopting a base model** against which exploitation status is determined.
 
-CALAMASUR plans to address this problem through three long-term lines of action ([see About+](about.qmd)), each designed to provide Scientific Committee members with information that complements — rather than replaces — the population models currently in use. This website tracks progress on the first of these lines, **Multi-model risk analysis**, whose initial outcomes are presented in the [working paper](docs/modelos.qmd) and the [SCW18 presentation](slides.qmd).
+This initiative addresses this challenge through a pragmatic course of action designed to provide Scientific Committee members with information that complements — rather than replaces — the population models currently in use. This website tracks progress on the **Multi-model risk analysis**, with initial findings presented in the [working paper](docs/modelos.qmd) and the [SCW18 presentation](slides.qmd).
 
 
 ## Summary

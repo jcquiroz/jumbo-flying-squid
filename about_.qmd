@@ -1,0 +1,43 @@
+---
+title: "About"
+subtitle: "Building an evidence-based, precautionary approach to the management of jumbo flying squid (*Dosidicus gigas*) within SPRFMO."
+format: html
+---
+
+## The project
+
+The jumbo flying squid (*Dosidicus gigas*) fishery is managed under the
+South Pacific Regional Fisheries Management Organisation (SPRFMO), whose
+Scientific Committee currently has to weigh several competing population
+models — developed independently in Peru, Chile, and China — that
+disagree on the stock's status and on the effort levels it can sustain.
+
+This project exists to help the Scientific Committee navigate that
+disagreement rather than resolve it prematurely. Rather than asking which
+single model is "correct," the work develops complementary lines of
+analysis — weighting projections against data and expert judgement, testing
+model robustness against alternative harvest control rules, and refining
+the underlying assessment directly — so that Committee members have more, and
+better-organised, information to draw on when setting precautionary
+management measures.
+
+The immediate goal is to bring at least one of these lines to a stage where
+it can be presented as a concrete implementation scheme at the **14th
+Meeting of the SPRFMO Scientific Committee (SC14, September 2026)**. This
+site tracks that progress: the working paper is available under
+[Models](models.qmd) and [Risk](docs/modelos.qmd), and presentation material
+under [Slides](slides.qmd).
+
+## Who's involved
+
+The work is carried out by Drs **Juan-Carlos Quiroz**
+([ORCID](https://orcid.org/0000-0002-2831-7689){target="_blank"}) and
+**Renato Gozzer**
+([ORCID](https://orcid.org/0000-0002-1156-4552){target="_blank"}).
+
+It is funded by the [Innovations for Ocean Action Foundation (I4OA)](https://ocean-action.org){target="_blank"},
+with support from [Facile Visual](https://www.facilevisual.com){target="_blank"}
+and [CALAMASUR](https://www.calamasur.com){target="_blank"}.
+
+The associated working paper is archived and citable at
+[10.5281/zenodo.21361536](https://doi.org/10.5281/zenodo.21361536){target="_blank"}.

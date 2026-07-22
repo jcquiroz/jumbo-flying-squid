@@ -16,7 +16,7 @@ rather than replaces — the population models currently in play.
 <a class="model-card" href="docs/modelos.qmd">
 <span class="model-card-tag">Line 1 · Under way</span>
 <span class="model-card-title">Multi-model risk analysis</span>
-<span class="model-card-desc">Weights population projections from a set of models (CALAMASUR, Chile, China) under differing assumptions about fishing effort. Its defining feature is the capacity to incorporate the views of a broad group of stakeholders, and to weight the credibility of each projection on data, empirical evidence and expert judgement.</span>
+<span class="model-card-desc">Weights population projections from a set of models (Peru, Chile, China) under differing assumptions about fishing effort. Its defining feature is the capacity to incorporate the views of a broad group of stakeholders, and to weight the credibility of each projection on data, empirical evidence and expert judgement.</span>
 </a>
 
 <span class="model-card">
@@ -27,7 +27,7 @@ rather than replaces — the population models currently in play.
 
 <a class="model-card" href="docs/SC13-Obs03-CALAMASUR-summary.qmd">
 <span class="model-card-tag">Line 3 · Committed</span>
-<span class="model-card-title">Improving the CALAMASUR model</span>
+<span class="model-card-title">Refining the environment-driven assessment</span>
 <span class="model-card-desc">Delivers the commitments made in SC13-Obs03: widening the fishing units (fleets) represented, and capturing differences in natural mortality between zones.</span>
 </a>
 
@@ -42,7 +42,7 @@ alternatives to one another:
 |---|---|---|
 | **Multi-model risk analysis** | *Given that the models disagree, what can we still say with confidence?* | Carries all three models as weighted hypotheses |
 | **Empirical MSE** | *Which models are robust enough to inform a decision?* | Tests the models against harvest control rules |
-| **Model improvement** | *Can the remaining objections to CALAMASUR's model be closed out?* | Improves one model |
+| **Model improvement** | *Can the remaining objections to the environment-driven assessment be closed out?* | Improves one model |
 
 : {tbl-colwidths="[24,40,36]"}
 
@@ -76,7 +76,7 @@ The work is organised around three steps:
 <span class="model-card">
 <span class="model-card-tag">Step 2 · During</span>
 <span class="model-card-title">Representation at SC14</span>
-<span class="model-card-desc">Scientific representation of CALAMASUR through the meeting of the SPRFMO Scientific Committee, September 2026.</span>
+<span class="model-card-desc">Scientific representation at the meeting of the SPRFMO Scientific Committee, September 2026.</span>
 </span>
 
 <span class="model-card">

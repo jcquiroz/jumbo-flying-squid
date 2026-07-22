@@ -33,7 +33,7 @@ handout version, with all build-up steps shown.
 <a class="model-card" href="slides/modelos-slides.html" target="_blank">
 <span class="model-card-tag">Section 1 · The disagreement</span>
 <span class="model-card-title">Three assessments, three verdicts</span>
-<span class="model-card-desc">The same species, region and catch data to 2024 — yet CALAMASUR, Chile and China reach markedly different conclusions on stock status.</span>
+<span class="model-card-desc">The same species, region and catch data to 2024 — yet Peru, Chile and China reach markedly different conclusions on stock status.</span>
 </a>
 
 <a class="model-card" href="slides/modelos-slides.html" target="_blank">

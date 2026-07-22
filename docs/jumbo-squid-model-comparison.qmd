@@ -22,7 +22,7 @@ sections below walk through where the models agree and where they part ways.
 
 ## The three modelling approaches at a glance
 
-| Dimension | **Chile — SPiCT** [@paya2025spict] | **China — Bayesian state-space** [@li2025china] | **CALAMASUR — Depletion + Pella-Tomlinson** [@roaureta2025calamasur] |
+| Dimension | **SPiCT** [@paya2025spict] | **Bayesian state-space** [@li2025china] | **Depletion + Pella-Tomlinson** [@roaureta2025calamasur] |
 |---|---|---|---|
 | Model family | Surplus production (Pella-Tomlinson) in **continuous time**, state-space | Surplus production (Pella-Tomlinson) in **discrete (annual) time**, state-space | **Two-stage**: monthly generalized *depletion* model → Pella-Tomlinson surplus production |
 | Estimation | Maximum likelihood (TMB) | Bayesian MCMC (WinBUGS) | Non-Bayesian hierarchical (ADMB) |

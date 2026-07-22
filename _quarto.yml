@@ -6,6 +6,7 @@ project:
     - models.qmd
     - slides.qmd
     - about.qmd
+    - about_.qmd
     - docs/SC13-Obs03-CALAMASUR-summary.qmd
     - docs/SC13-SQ06-CHL-SPiCT-summary.qmd
     - docs/SC13-SQ07-CHN-state-space-summary.qmd
@@ -36,7 +37,7 @@ website:
         text: Risk+
       - href: slides.qmd
         text: Slides+
-      - href: about.qmd
+      - href: about_.qmd
         text: About+
 
   page-footer:
